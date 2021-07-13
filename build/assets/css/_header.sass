@@ -1,0 +1,147 @@
+body
+    &:not(.homebody)
+        padding-top: 100px
+
+
+@import _hamburger
+.hamburger
+    @include plus1025()
+        display: none
+.header
+    position: fixed
+    z-index: 2
+    top: 0
+    right: 0
+    width: 100%
+    box-shadow: 0px 10px 20px rgba(188, 188, 188, 0.16)
+    height: 100px
+    &__container
+        height: 100%
+        display: flex
+        justify-content: space-between
+        align-items: center
+        background-color: #fff
+        @include plus1025()
+            display: grid
+            grid-template-columns: auto 1fr 360px
+        @include plus1900()
+            grid-template-columns: auto 1fr 400px
+    &__logo
+        position: relative
+        z-index: 6
+        @include plus1025()
+            margin-right: 30px
+        @include plus1900()
+            margin-right: 170px
+    &__nav
+        position: fixed
+        top: -101vh
+        right: 0
+
+        width: 100%
+        height: 100vh
+        padding-top: 100px
+        display: flex
+        align-items: center
+        justify-content: center
+        z-index: 5
+        background-color: #EBEDFF
+        transition: .4s ease-out
+        @include plus1025()
+            height: unset
+            padding: 0
+            background-color: transparent
+            width: max-content
+            position: static
+            padding-right: 16px
+        @include plus1900()
+            width: unset
+        &::after
+            content: ''
+            display: inline-block
+            position: absolute
+            width: 100%
+            height: 0px
+            background: transparent
+            border: 1px solid #5249b9
+            opacity: 0.07
+            top: 99px
+            right: 0
+            @include plus1025()
+                content: none
+        &.open
+            top: 0
+            .header__nav__ul
+                @media screen and ( max-width: 1024px )
+                    grid-gap: 56px
+                    @media screen and ( max-height: 700px )
+                        grid-gap: 30px
+
+                @include plus1025()
+                    grid-gap: 20px
+        &__ul
+            display: grid
+            grid-gap: 0
+            transition: .2s ease-out
+            justify-items: center
+            position: absolute
+            @include plus1025()
+                position: static
+                justify-items: unset
+                grid-template-columns: repeat(6, auto)
+                grid-gap: 20px
+            @include plus1900()
+                grid-gap: 40px
+                // grid-gap: 30px
+            li
+                max-width: max-content
+                font-family: firago
+                color: $darkblue
+                text-transform: uppercase
+                @include font(24px, 28px)
+                @include plus1025()
+                    color: #000
+                    @include font(16px, 19px)
+    &__searchform
+        display: flex
+        align-items: center
+        border: 1px solid transparent
+        background-color: transparent
+        height: 66px
+        width: 64px
+        justify-content: flex-end
+        margin-right: 20px
+        @include plus1025()
+            padding-left: 20px
+            margin-left: 0
+            width: 100%
+            margin-right: 0
+            border-radius: 16px
+            background-color: $blue
+            border-color: #8075fa
+        @include plus1900()
+            // margin-left: 121px
+        input
+            color: #fff
+            flex-grow: 1
+            font-family: firagobook
+            @include font(16px, 19px)
+            flex-basis: 0
+            flex-shrink: 1
+            &::placeholder
+                color: #fff
+                opacity: .5
+        &__icon
+            cursor: pointer
+            margin: 0 10px
+            min-width: 44px
+            height: 44px
+            display: flex
+            justify-content: center
+            align-items: center
+            border-radius: 10px
+            background-color: #fff
+            svg
+                width: 24px
+                height: 24px
+            

@@ -1,0 +1,482 @@
+.homemain
+    display: grid
+    @media screen and ( max-width: 1024px )
+        padding-left: 0
+        padding-right: 0
+    @include plus1025()
+        grid-gap: 16px
+        grid-template-columns: 1fr 398px
+    section
+        &:not(:first-of-type)
+            @media screen and ( max-width: 1024px )
+                // padding: 0 20px
+    &__herocontent
+        overflow: hidden
+        width: 100%
+        max-height: 100vh
+        padding-top: 118px
+        position: relative
+        padding-bottom: 18px
+        padding-right: 14px
+        display: grid
+        height: 100vh
+        @include plus1025()
+            grid-template-columns: 1fr 370px
+            height: 729px
+
+        &__cover
+            position: absolute
+            width: 100%
+            height: 100%
+            top: 0
+            right: 0
+            z-index: -1
+            overflow: hidden
+            border-radius: 0px 0px 30px 30px
+            background-image: url(../img/herocontentcover.jpg)
+            background-repeat: no-repeat
+            background-size: cover
+            background-position: right
+        &__logobox
+            width: 100%
+            height: 100%
+            
+
+            place-items: center
+            display: none
+            @include plus1025()
+                display: grid
+            svg
+                height: 115px
+                width: 410px
+        &__articles
+            overflow: visible
+            position: absolute
+            bottom: 24px
+            left: 36px
+            width: calc(100% - #{36px * 2})
+            height: 130px
+            @include plus1025()
+                padding: 32px 0
+
+                border-radius: 19px
+                background: transparent
+                box-shadow: 0px 13px 76px rgba(0, 0, 0, 0.36)
+                backdrop-filter: blur(20.462499618530273px)
+                --webkit-backdrop-filter: blur(20.462499618530273px)
+                background-color: rgba(255, 255, 255, 0.5)
+                overflow: hidden
+                height: calc(729px - 118px - 18px)
+                max-height: calc(100vh - 118px - 18px)
+                width: 100%
+                position: static
+            &__ul
+                display: flex
+                will-change: transform
+                transition-timing-function: linear
+                @include plus1025()
+                    flex-direction: column
+                li
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    height: 100%
+                    overflow: hidden
+                    position: static !important
+                    // flex-shrink: unset !important
+                    padding: 23px 33px
+                    border-bottom: 1px solid rgba(#709584, .16)
+                    @media screen and ( max-width: 1024px )
+                        // backdrop-filter: blur(50px)
+                        filter: drop-shadow(0px 13px 76px rgba(0, 0, 0, 0.36))
+                        background-color: rgba(255, 255, 255, 0.71)
+                        // background-color: #fff
+                        // background-color: rgba(#fff, .29)
+                        border-radius: 29px
+                    @include plus1025()
+                        height: 100px
+                        padding: 18px 28px
+                    a
+                        font-family: firagomedium
+                        @include font(16px, 22px)
+                        color: #000
+                        font-weight: 500
+                        overflow: hidden
+                        display: inline-block
+                        @include maxcolumn(3)
+                        
+                    &:hover
+                        a
+                            color: #2A67D9
+        // .swiper-container
+        //     width: 100%
+        // .swiper-wrapper
+        //     display: flex
+        //     width: 100%
+        //     flex-direction: column
+        // .swiper-slide
+
+    &__contactinfo
+        order: 1
+        @include plus1025()
+            padding-top: 118px
+            order: 0
+            height: 729px
+            max-height: 100vh
+        &__content
+            height: 100%
+            padding: 30px
+            border-radius: 20px
+            background-color: #EBEDFF
+        h4
+            color: $grey
+            font-family: firagosemibold
+            text-transform: uppercase
+            margin-bottom: 25px
+            @include font(18px, 22px)
+            @include plus1025()
+                @include font(20px, 24px)
+                
+        &__socials
+            display: grid
+            grid-template-columns: 1fr 1fr 1fr
+            grid-gap: 20px
+            height: 70px
+            width: max-content
+            margin-bottom: 50px
+            li
+                display: flex
+                justify-content: center
+                align-items: center
+                height: 100%
+                width: 95px
+                border-radius: 16px
+                overflow: hidden
+                @include plus1025()
+                    width: 100px
+                a
+                    display: flex
+
+                &.fb
+                    background-color: #4267B2
+                    a
+                        &::after
+                            content: url(../img/socials/fb.svg)
+                &.ig
+                    background-image: url(../img/socials/igcover.svg)
+                    background-size: cover
+                    background-repeat: no-repeat
+                    
+                    a
+                        &::after
+                            content: url(../img/socials/ig.svg)
+                &.yt
+                    background-color: #FF0000
+                    a
+                        &::after
+                            content: url(../img/socials/yt.svg)
+        p
+            font-family: firagomedium
+            @include font(16px, 22px)
+            
+            margin-bottom: 24px
+
+        &__downloads
+            display: grid
+            grid-template-columns: 1fr 1fr
+            grid-gap: 10px
+            width: max-content
+            a
+                img
+                    height: 45px
+                    object-fit: contain
+                    @include plus1025()
+                        height: 167px
+                        max-width: 167px
+                    &.mob
+                        @include plus1025()
+                            display: none
+                    &.desk
+                        border-radius: 22px
+                        background: #fff
+                        border: 1px solid #707070
+                        box-shadow: 0px 16px 36px rgba(0, 0, 0, 0.16)
+                        pointer-events: none
+                        display: none
+                        @include plus1025()
+                            display: inline-block    
+            span
+                display: block
+                margin-bottom: 16px
+                font-family: firagobook
+                @include font(16px, 19px)
+                color: #000
+    
+    &__newestarticles
+        width: 100%
+        overflow: hidden
+        &.last
+            @include plus1025()
+                margin-bottom: 65px
+        .sectionheader
+            margin-top: 60px
+            background: linear-gradient(-90deg, #c0d1f1 0%, #87a2d6 100%)
+
+        &__navigation
+            display: none
+            grid-template-columns: 1fr 1fr
+            grid-gap: 10px
+            align-items: center
+            height: 50px
+            @include plus700()
+                display: grid
+            > div
+                cursor: pointer
+                height: 100%
+                width: 50px
+                border-radius: 14px
+                background-color: #fff
+                display: flex
+                opacity: 1
+                transition: .2 ease-out
+                justify-content: center
+                align-items: center
+                &:first-child
+                    svg
+                        transform: rotate(-180deg)
+                &.disabled
+                    opacity: .22
+        &__slider
+            width: 100%
+            overflow: hidden
+            height: 304px
+            @include plus700()
+                height: 638px
+    
+            @include plus1025()
+                height: 690px
+        &__swiper
+            height: 100%
+            // position: static !important
+            overflow: visible
+            &.story
+                .homemain__newestarticles__slide
+                    img
+                        object-position: center top
+                        transition: 1.4s ease-out
+                    &:hover
+                        img
+                            transform: none !important
+                            object-position: center bottom
+
+        &__wrapper
+            // position: static !important
+            height: 100%
+        &__slide
+            background-color: #fff
+            // overflow: hidden
+            border-radius: 16px
+            border: 1px solid #f4f4f4
+            position: relative
+            width: 91%
+            height: 279px
+            @include plus700()
+            @include plus1025()
+                height: 310px
+            &::after
+                content: ''
+                position: absolute
+                z-index: -1
+                top: 20px
+                right: 20px
+                width: calc( 100% - 40px )
+                height: calc( 100% - 40px )
+                background: #fff
+                border: 1px solid #707070
+                box-shadow: 0px 43px 46px rgba(15, 88, 128, 0)
+                transition: .4s ease-out
+            &__category
+                cursor: pointer
+                position: absolute
+                top: 8px
+                right: 8px
+                color: #fff
+                font-family: firago
+                padding: 10px 16px
+                @include font(11px, 13px)
+                border-radius: 10px
+                background-color: var(--categorycolor)
+                @include plus1025()
+                    padding: 11px 14px
+                    @include font(14px, 17px)
+            &__imgbox
+                display: flex
+                width: 100%
+                height: 147px
+                overflow: hidden
+                border-radius: 16px 16px 0 0
+                @include plus1025()
+                    height: 180px
+                img
+                    width: 100%
+                    height: 100%
+                    transition: .4s ease-out
+                    object-fit: cover
+            &__textbox
+                padding: 20px
+                border-radius: 0 0 16px 16px
+            h3
+                margin-bottom: 10px
+                overflow: hidden
+                font-family: firagosemibold
+                text-transform: uppercase
+                @include font(14px, 20px)
+                @include plus1025()
+                    @include font(16px, 24px)
+                    
+                
+                a
+                    @include maxcolumn(2)
+            p
+                font-family: firagobook
+                opacity: .8
+                @include font(12px, 20px)
+                @include maxcolumn(2)
+                overflow: hidden
+                @include plus1025()
+                    @include font(14px, 17px)
+
+            &:hover
+                img
+                    transform: scale(1.2)
+                &::after
+                    box-shadow: 0px 43px 46px rgba(15, 88, 128, 0.16)
+                    
+    &__populararticles
+        &__header
+            background-color: #ACCDBE
+        &.pink
+            .sectionheader
+                background-color: #ff7686
+                background: linear-gradient(-90deg, rgba(217, 92, 150, 0.82) 0%, #ff7686 100%)
+            .homemain__populararticles__articles
+                background-color: #fff
+                @include plus1025()
+                    overflow: hidden
+            .homemain__populararticles__ul
+                height: #{140px * 2}
+                @include plus1025()
+                    height: unset !important
+                &.toggled
+                    height: #{140px * 4}
+            li
+                flex-direction: column
+                height: 140px
+                justify-content: center
+                align-items: flex-start
+                color: #000
+                --hovercolor: #FF9191
+                background-color: transparent
+                transition: .1s ease-out
+                &:nth-of-type(n+5)
+                    display: none
+                h3
+                    color: inherit
+                    @include maxcolumn(2)
+                    margin-bottom: 8px
+                p
+                    font-family: firagobook
+                    @include font(14px, 22px)
+                    @include maxcolumn(2)
+                    overflow: hidden
+                    color: inherit
+                    opacity: .8
+                &:nth-of-type(odd)
+                    --hovercolor: #30B4FA
+                @include plus1025()
+                    &:hover
+                        color: #fff
+                        background-color: var(--hovercolor)
+
+                    
+        &__articles
+            background-color: rgba(#ACCDBE, .2)
+            border-radius: 20px
+            margin-bottom: 30px
+            overflow: hidden
+            @include plus1025()
+                margin-bottom: 0
+            &__toggler
+                height: 64px
+                display: flex
+                padding: 0 24px
+                cursor: pointer
+                justify-content: center
+                align-items: center
+                font-family: firagosemibold
+                color: rgba(#000, .3)
+                @include font(16px, 19px)                
+                border-bottom: 1px solid rgba(#709584, .16)
+                @include plus1025()
+                    display: none
+                .off
+                    display: none
+                &.toggled
+                    .off
+                        display: inline
+                    .on
+                        display: none
+        &__ul
+            display: grid
+            width: 100%
+            overflow: hidden
+            height: 300px
+            transition: height .4s ease-out
+            @include plus1025()
+                height: unset !important
+            &.toggled
+                height: 600px
+            li
+                height: 100px
+                display: flex
+                padding: 0 24px
+                align-items: center
+                border-bottom: 1px solid rgba(#709584, .16)
+                &:nth-of-type(n+7)
+                    display: none
+                h3
+                    @include font(18px, 21px)
+                    color: #709584
+                    font-family: firagosemibold
+                    overflow: hidden
+                    @include maxcolumn(3)
+                    @include plus1025()
+                        line-height: 24px
+            
+
+.sectionheader
+    height: 90px
+    border-radius: 20px
+    padding: 0 24px
+    display: flex
+    justify-content: space-between
+    align-items: center
+    color: #fff
+    font-family: firagosemibold
+    @include font(18px, 22px)
+    text-transform: uppercase
+    margin-bottom: 20px
+    @include plus1025()
+        margin-bottom: 30px
+        &.bigger
+            padding: 0 61px
+            @include font(24px, 28px)
+        &.smaller
+            @include font(20px, 24px)
+            padding: 0 30px
+    h2
+        @include font(inherit, inherit)
+        
+
+.swiper-wrapper
+    box-sizing: border-box !important

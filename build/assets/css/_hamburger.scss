@@ -1,0 +1,29 @@
+.hamburger {
+    width: 23px;
+    position: absolute;
+    top: 36px;
+    right: 20px;
+    z-index: 6;
+    cursor: pointer;
+  }
+  
+  .hamburger:before,
+  .hamburger:after,
+  .hamburger div {
+    background: $darkblue;
+    content: "";
+    display: block;
+    height: 4px;
+    border-radius: 3px;
+    margin: 4px 0;
+    transition: 0.5s;
+  }
+  .hamburger.open:before {
+    transform: translateY(8px) rotate(135deg);
+  }
+  .hamburger.open:after {
+    transform: translateY(-8px) rotate(-135deg);
+  }
+  .hamburger.open div {
+    transform: scale(0);
+  }

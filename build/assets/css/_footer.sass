@@ -1,0 +1,65 @@
+.footer
+    background-color: #c0d1f1
+    background-image: url(../img/footercover.png)
+    background-position: cover
+    color: #5E7DB7
+    padding-top: 56px
+    padding-bottom: 72px
+
+    @include plus1025()
+        padding-top: 60px
+        padding-bottom: 60px
+    &__sections
+        display: grid
+        justify-content: center
+        justify-items: center
+
+        @include plus1025()
+            justify-items: unset
+            grid-gap: 10px
+            grid-template-columns: repeat(4, 1fr)
+    &__section
+        &:not(:last-child)
+            margin-bottom: 50px
+        h4
+            font-family: firagobold
+            text-align: center
+            @include font(18px, 22px)
+            text-transform: uppercase
+            margin-bottom: 30px
+            pointer-events: none
+            @media screen and ( max-width: 1024px )
+                cursor: pointer
+                pointer-events: all
+                display: flex
+                align-items: center
+                justify-content: center
+                margin-bottom: 0
+                transition: .4s ease-out
+                &::after
+                    content: url(../img/footerarrow.svg)
+                    margin-left: 20px
+        &__ul
+            display: grid
+            --height: min-content
+            grid-gap: 32px
+            height: 0
+            overflow: hidden
+            transition: .4s ease-out
+            opacity: 0
+            li
+                text-align: center
+                font-family: firagobook
+                @include font(16px, 19px)
+                opacity: .8
+        &.toggled
+            @media screen and ( max-width: 1024px )
+                h4
+                    margin-bottom: 30px
+                .footer__section__ul
+                    height: var(--height)
+                    opacity: 1
+
+
+
+        

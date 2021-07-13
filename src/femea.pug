@@ -1,0 +1,16 @@
+-
+    const pageinfo = {
+        title: 'FEMEA'
+    }
+
+doctype html
+html(lang="en")
+    head
+        include ../layouts/_head
+    body(class=pageinfo.title=== 'Home' ? 'homebody' : '')
+        include ../layouts/_header
+        main.femeamain.container
+            .femeamain__herocontent
+
+        include ../layouts/_footer
+        include ../layouts/_scripts

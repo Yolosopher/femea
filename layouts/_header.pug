@@ -1,0 +1,24 @@
+header.header
+    .header__container.container
+        a.header__logo.logo(href="index.html")
+            include ../components/logo
+        nav.header__nav
+            ul.header__nav__ul
+                li
+                    a(href="my-sexuality.html") ჩემი სექსუალობა
+                li
+                    a(href="my-psychics.html") ჩემი ფსიქიკა
+                li
+                    a(href="my-body.html") ჩემი სხეული
+                li
+                    a(href="my-safeness.html") ჩემი უსაფრთხოება
+                li
+                    a(href="my-story.html") ჩემი ამბავი
+                li
+                    a(href="femea.html") FEMEA
+        form#searchform.header__searchform(action="")
+            input#search(type="text", name="search", placeholder="ძიება")
+            button.header__searchform__icon(type='submit')
+                include ../components/search
+        .hamburger
+            div

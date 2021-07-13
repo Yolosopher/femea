@@ -1,0 +1,233 @@
+-
+    const pageinfo = {
+        title: 'Home'
+    }
+-
+    const articleNames = [
+        'სიახლის სათაური შეიძლება იყოს ოხაზიანი',
+        'სიახლის სათაური შეიძლება იყოს ოხაზიანი ან საერთოდაც შეიძლება სამხაზიანიც',
+        'სტატიის სათაური იქნება ასეთი შეიძლება ორხაზ…',
+        'სიახლის სათაური შეიძლება იყოს ოხაზიანი ან საერთოდაც შეიძლება სამხაზიანიც',
+        'სტატიის სათაური იქნება ასეთი შეიძლება ორხაზ…',
+        'სიახლის სათაური შეიძლება იყოს ოხაზიანი ან საერთოდაც შეიძლება სამხაზიანიც'
+    ]
+-
+    const articles = [
+        {
+            title: 'სიახლის სათაური შეიძლება იყოს ოხაზიანი',
+            description: 'ეს არის სტატიის მოკლე შინაარსის ადგილი რომელიც ორ ხაზზე გრძელდება და ასე…',
+            image: 'assets/img/slideslatestnews/1.jpg',
+            category: 'ჩემი სექსუალობა',
+            color: '#D9C65C',
+            image1: 'assets/img/storyarticles/1.jpg',
+        },
+        {
+            title: 'სიახლის სათაური შეიძლება იყოს ოხაზიანი ან საერთოდაც შეიძლება სამხაზიანიც',
+            description: 'ეს არის სტატიის მოკლე შინაარსის ადგილი რომელიც ორ ხაზზე გრძელდება და ასე…',
+            image: 'assets/img/slideslatestnews/2.jpg',
+            category: 'ჩემი კუტუ',
+            color: '#5CD9BC',
+            image1: 'assets/img/storyarticles/2.jpg',
+        },
+        {
+            title: 'სტატიის სათაური იქნება ასეთი შეიძლება ორხაზ…',
+            description: 'ეს არის სტატიის მოკლე შინაარსის ადგილი რომელიც ორ ხაზზე გრძელდება და ასე…',
+            image: 'assets/img/slideslatestnews/3.jpg',
+            category: 'ჩემი ფსიქიკა',
+            color: '#C0D1F1',
+            image1: 'assets/img/storyarticles/3.jpg',
+        },
+        {
+            title: 'სიახლის სათაური შეიძლება იყოს ოხაზიანი ან საერთოდაც შეიძლება სამხაზიანიც',
+            description: 'ეს არის სტატიის მოკლე შინაარსის ადგილი რომელიც ორ ხაზზე გრძელდება და ასე…',
+            image: 'assets/img/slideslatestnews/4.jpg',
+            category: 'ჩემი სექსუალობა',
+            color: 'blue',
+            image1: 'assets/img/storyarticles/1.jpg',
+        },
+        {
+            title: 'სტატიის სათაური იქნება ასეთი შეიძლება ორხაზ…',
+            description: 'ეს არის სტატიის მოკლე შინაარსის ადგილი რომელიც ორ ხაზზე გრძელდება და ასე…',
+            image: 'assets/img/slideslatestnews/5.jpg',
+            category: 'ჩემი სხეული',
+            color: 'red',
+            image1: 'assets/img/storyarticles/2.jpg',
+        },
+        {
+            title: 'სიახლის სათაური შეიძლება იყოს ოხაზიანი ან საერთოდაც შეიძლება სამხაზიანიც',
+            description: 'ეს არის სტატიის მოკლე შინაარსის ადგილი რომელიც ორ ხაზზე გრძელდება და ასე…',
+            image: 'assets/img/slideslatestnews/6.jpg',
+            category: 'ჩემი სექსუალობა',
+            color: 'red',
+            image1: 'assets/img/storyarticles/3.jpg',
+        }
+    ]
+
+doctype html
+html(lang="en")
+    head
+        link(rel="stylesheet", href="assets/css/swiper-bundle.min.css")
+        include ../layouts/_head
+    body(class=pageinfo.title=== 'Home' ? 'homebody' : '')
+        include ../layouts/_header
+        main.homemain.container
+            //- .homemain__herocontents
+            section.homemain__herocontent
+                .homemain__herocontent__cover
+                .homemain__herocontent__logobox
+                    include ../components/logo
+                .homemain__herocontent__articles.swiper-container
+                    ul.homemain__herocontent__articles__ul.swiper-wrapper
+                        each name, index in articleNames
+                            li.swiper-slide
+                                h3
+                                    a(href="#")= name
+                        each name, index in articleNames
+                            li.swiper-slide
+                                h3
+                                    a(href="#")= name
+            section.homemain__contactinfo
+                .homemain__contactinfo__content
+                    h4 გამოგვყევი
+                    ul.homemain__contactinfo__socials
+                        li.fb
+                            a(href="#", target='_blank')
+                        li.ig
+                            a(href="#", target='_blank')
+                        li.yt
+                            a(href="#", target='_blank')
+                    h4 safe you
+                    p გადმოწერე აპლიკაცია, იყავი უსაფრთხოდ!
+                    .homemain__contactinfo__downloads
+                        a.googleplay(href='#', target='_blank')
+                            span Android
+                            img.mob(src="assets/img/downloads/googleplay.png", alt="") 
+                            img.desk(src="assets/img/downloads/code.png", alt="") 
+                        a.appstore(href='#', target='_blank') 
+                            span IOS
+                            img.mob(src="assets/img/downloads/appstore.png", alt="") 
+                            img.desk(src="assets/img/downloads/code.png", alt="") 
+            section.homemain__newestarticles
+                .innercontainer
+                    .homemain__newestarticles__header.sectionheader
+                        h2 უახლესი სტატიები >
+                        .homemain__newestarticles__navigation
+                            .homemain__newestarticles__navigation__left.real
+                                include ../components/sliderarrowright
+                            .homemain__newestarticles__navigation__right.real
+                                include ../components/sliderarrowright
+                .homemain__newestarticles__slider.innercontainer
+                    .homemain__newestarticles__swiper.swiper-container.real
+                        .homemain__newestarticles__wrapper.swiper-wrapper
+                            each article, index in articles
+                                article.homemain__newestarticles__slide.swiper-slide
+                                    a.homemain__newestarticles__slide__imgbox(href='#')
+                                        img(src=article.image, alt=article.title)
+                                    .homemain__newestarticles__slide__textbox
+                                        h3
+                                            a(href="#")= article.title
+                                        p= article.description
+                                    a.homemain__newestarticles__slide__category(href="#", style=`--categorycolor: ${article.color};`)= article.category
+                            each article, index in articles
+                                article.homemain__newestarticles__slide.swiper-slide
+                                    a.homemain__newestarticles__slide__imgbox(href='#')
+                                        img(src=article.image, alt=article.title)
+                                    .homemain__newestarticles__slide__textbox
+                                        h3
+                                            a(href="#")= article.title
+                                        p= article.description
+                                    a.homemain__newestarticles__slide__category(href="#", style=`--categorycolor: ${article.color};`)= article.category
+                            each article, index in articles
+                                article.homemain__newestarticles__slide.swiper-slide
+                                    a.homemain__newestarticles__slide__imgbox(href='#')
+                                        img(src=article.image, alt=article.title)
+                                    .homemain__newestarticles__slide__textbox
+                                        h3
+                                            a(href="#")= article.title
+                                        p= article.description
+                                    a.homemain__newestarticles__slide__category(href="#", style=`--categorycolor: ${article.color};`)= article.category
+            
+            section.homemain__populararticles
+                .innercontainer
+                    .homemain__populararticles__header.sectionheader
+                        h2 პოპულარული სტატიები >
+                        include ../components/fire
+                    .homemain__populararticles__articles
+                        ul.homemain__populararticles__ul
+                            each name, index in articleNames
+                                li
+                                    h3
+                                        a(href="#")= name
+                            each name, index in articleNames
+                                li
+                                    h3
+                                        a(href="#")= name
+                            each name, index in articleNames
+                                li
+                                    h3
+                                        a(href="#")= name
+                        .homemain__populararticles__articles__toggler
+                            span.on მეტის ნახვა
+                            span.off აკეცვა
+            //- cloned
+            section.homemain__newestarticles.last
+                .innercontainer
+                    .homemain__newestarticles__header.sectionheader
+                        h2 ჩემი ამბავი >
+                        .homemain__newestarticles__navigation
+                            .homemain__newestarticles__navigation__left.story
+                                include ../components/sliderarrowright
+                            .homemain__newestarticles__navigation__right.story
+                                include ../components/sliderarrowright
+                .homemain__newestarticles__slider.innercontainer
+                    .homemain__newestarticles__swiper.swiper-container.story
+                        .homemain__newestarticles__wrapper.swiper-wrapper
+                            each article, index in articles
+                                article.homemain__newestarticles__slide.swiper-slide
+                                    a.homemain__newestarticles__slide__imgbox(href='#')
+                                        img(src=article.image1, alt=article.title)
+                                    .homemain__newestarticles__slide__textbox
+                                        h3
+                                            a(href="#")= article.title
+                                        p= article.description
+                                    a.homemain__newestarticles__slide__category(href="#", style=`--categorycolor: ${article.color};`)= article.category
+                            each article, index in articles
+                                article.homemain__newestarticles__slide.swiper-slide
+                                    a.homemain__newestarticles__slide__imgbox(href='#')
+                                        img(src=article.image1, alt=article.title)
+                                    .homemain__newestarticles__slide__textbox
+                                        h3
+                                            a(href="#")= article.title
+                                        p= article.description
+                                    a.homemain__newestarticles__slide__category(href="#", style=`--categorycolor: ${article.color};`)= article.category
+                            each article, index in articles
+                                article.homemain__newestarticles__slide.swiper-slide
+                                    a.homemain__newestarticles__slide__imgbox(href='#')
+                                        img(src=article.image1, alt=article.title)
+                                    .homemain__newestarticles__slide__textbox
+                                        h3
+                                            a(href="#")= article.title
+                                        p= article.description
+                                    a.homemain__newestarticles__slide__category(href="#", style=`--categorycolor: ${article.color};`)= article.category
+            //- cloned
+            section.homemain__populararticles.pink
+                .innercontainer
+                    .homemain__populararticles__header.sectionheader
+                        h2 ახლა კითხულობენ >
+                        include ../components/eye
+                    .homemain__populararticles__articles
+                        ul.homemain__populararticles__ul
+                            each article, index in articles
+                                li
+                                    h3
+                                        a(href="#")= article.title
+                                    p=article.description
+                        .homemain__populararticles__articles__toggler
+                            span.on მეტის ნახვა
+                            span.off აკეცვა
+        include ../layouts/_footer
+
+        include ../layouts/_scripts
+        //- only homepage
+        script(src="assets/js/swiper-bundle.min.js") 
+        script(src="assets/js/homepage.js")
