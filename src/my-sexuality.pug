@@ -1,0 +1,229 @@
+-
+    const pageinfo = {
+        title: 'ჩემი სექსუალობა'
+    }
+-
+    const articleNames = [
+        'სიახლის სათაური შეიძლება იყოს ოხაზიანი',
+        'სიახლის სათაური შეიძლება იყოს ოხაზიანი ან საერთოდაც შეიძლება სამხაზიანიც',
+        'სტატიის სათაური იქნება ასეთი შეიძლება ორხაზ…',
+        'სიახლის სათაური შეიძლება იყოს ოხაზიანი ან საერთოდაც შეიძლება სამხაზიანიც',
+        'სტატიის სათაური იქნება ასეთი შეიძლება ორხაზ…',
+        'სიახლის სათაური შეიძლება იყოს ოხაზიანი ან საერთოდაც შეიძლება სამხაზიანიც'
+    ]
+-
+    const articles = [
+        {
+            title: 'სიახლის სათაური შეიძლება იყოს ოხაზიანი',
+            description: 'ეს არის სტატიის მოკლე შინაარსის ადგილი რომელიც ორ ხაზზე გრძელდება და ასე…',
+            image: 'assets/img/slideslatestnews/1.jpg',
+            category: 'ჩემი სექსუალობა',
+            color: '#D9C65C',
+            image1: 'assets/img/storyarticles/1.jpg',
+        },
+        {
+            title: 'სიახლის სათაური შეიძლება იყოს ოხაზიანი ან საერთოდაც შეიძლება სამხაზიანიც',
+            description: 'ეს არის სტატიის მოკლე შინაარსის ადგილი რომელიც ორ ხაზზე გრძელდება და ასე…',
+            image: 'assets/img/slideslatestnews/2.jpg',
+            category: 'ჩემი კიტრი',
+            color: '#5CD9BC',
+            image1: 'assets/img/storyarticles/2.jpg',
+        },
+        {
+            title: 'სტატიის სათაური იქნება ასეთი შეიძლება ორხაზ…',
+            description: 'ეს არის სტატიის მოკლე შინაარსის ადგილი რომელიც ორ ხაზზე გრძელდება და ასე…',
+            image: 'assets/img/slideslatestnews/3.jpg',
+            category: 'ჩემი ფსიქიკა',
+            color: '#C0D1F1',
+            image1: 'assets/img/storyarticles/3.jpg',
+        },
+        {
+            title: 'სიახლის სათაური შეიძლება იყოს ოხაზიანი ან საერთოდაც შეიძლება სამხაზიანიც',
+            description: 'ეს არის სტატიის მოკლე შინაარსის ადგილი რომელიც ორ ხაზზე გრძელდება და ასე…',
+            image: 'assets/img/slideslatestnews/4.jpg',
+            category: 'ჩემი სექსუალობა',
+            color: 'blue',
+            image1: 'assets/img/storyarticles/1.jpg',
+        },
+        {
+            title: 'სტატიის სათაური იქნება ასეთი შეიძლება ორხაზ…',
+            description: 'ეს არის სტატიის მოკლე შინაარსის ადგილი რომელიც ორ ხაზზე გრძელდება და ასე…',
+            image: 'assets/img/slideslatestnews/5.jpg',
+            category: 'ჩემი სხეული',
+            color: 'red',
+            image1: 'assets/img/storyarticles/2.jpg',
+        },
+        {
+            title: 'სიახლის სათაური შეიძლება იყოს ოხაზიანი ან საერთოდაც შეიძლება სამხაზიანიც',
+            description: 'ეს არის სტატიის მოკლე შინაარსის ადგილი რომელიც ორ ხაზზე გრძელდება და ასე…',
+            image: 'assets/img/slideslatestnews/6.jpg',
+            category: 'ჩემი სექსუალობა',
+            color: 'red',
+            image1: 'assets/img/storyarticles/3.jpg',
+        }
+    ]
+
+doctype html
+html(lang="en")
+    head
+        link(rel="stylesheet", href="assets/css/swiper-bundle.min.css")
+        include ../layouts/_head
+    body(class=pageinfo.title=== 'Home' ? 'homebody' : '')
+        include ../layouts/_header
+        include ../layouts/_pagenav
+
+        main.sexualitymain.container
+            .sexualitymain__content
+                .sexualitymain__description
+                    p
+                        | ტექსტის მაგალითი: სექსუალობა ბიოლოგიური, ფსიქოლოგიური, სულიერი და ემოციური განცდებისა და ქცევების ერთობლიობაა, რაც დაკავშირებულია სექსუალური ლტოლვის გამოვლენასა და დაკმაყოფილებასთან და წარმოადგენს ადამიანის ორგანიზმის თანდაყოლილ მოთხოვნილებას და ფუნქციას. ადამიანი იბადება გარკვეული (სექსუალური) პოტენციალით, რომელიც შემდეგ ვითარდება ინდივიდუალური ცხოვრებისეული გამოცდილების საფუძველზე. ის მოიცავს სქესს, გენდერულ იდენტობას და როლს, სექსუალურ ორიენტაციას, ეროტიულობას, სიამოვნებას, ინტიმურობასა და რეპროდუქციას. ტექსტის მაგალითი: სექსუალობა ბიოლოგიური, ფსიქოლოგიური, სულიერი და ემოციური განცდებისა და ქცევების ერთობლიობაა, რაც დაკავშირებულია სექსუალური ლტოლვის გამოვლენასა და დაკმაყოფილებასთან და წარმოადგენს ადამიანის ორგანიზმის თანდაყოლილ მოთხოვნილებას და ფუნქციას. ადამიანი იბადება გარკვეული (სექსუალური) პოტენციალით, რომელიც შემდეგ ვითარდება ინდივიდუალური ცხოვრებისეული გამოცდილების საფუძველზე. ის მოიცავს სქესს, გენდერულ იდენტობას და როლს, სექსუალურ ორიენტაციას, ეროტიულობას, სიამოვნებას, ინტიმურობასა და რეპროდუქციას.
+                    .sexualitymain__description__hr
+
+                    .sexualitymain__description__toggler
+                        span.on მეტის ნახვა
+                        span.off აკეცვა
+
+                //- cloned
+                section.homemain__populararticles.pink
+                    .innercontainer
+                        .homemain__populararticles__header.sectionheader
+                            h2 ხშირად დასმული კითხვები >
+                            include ../components/eye
+                        .homemain__populararticles__articles
+                            ul.homemain__populararticles__ul
+                                each article, index in articles
+                                    li
+                                        h3
+                                            a(href="#")= article.title
+                                        p=article.description
+                            .homemain__populararticles__articles__toggler
+                                span.on მეტის ნახვა
+                                span.off აკეცვა
+                //- cloned
+                section.homemain__newestarticles
+                    .innercontainer
+                        .homemain__newestarticles__header.sectionheader
+                            h2 ჩემი სექსუალობა >
+                            .homemain__newestarticles__navigation
+                                .homemain__newestarticles__navigation__left.real
+                                    include ../components/sliderarrowright
+                                .homemain__newestarticles__navigation__right.real
+                                    include ../components/sliderarrowright
+                    .homemain__newestarticles__slider.innercontainer.real
+                        .homemain__newestarticles__swiper.swiper-container.real
+                            .homemain__newestarticles__wrapper.swiper-wrapper
+                                each article, index in articles
+                                    article.homemain__newestarticles__slide.swiper-slide
+                                        a.homemain__newestarticles__slide__imgbox(href='#')
+                                            img(src=article.image, alt=article.title)
+                                        .homemain__newestarticles__slide__textbox
+                                            h3
+                                                a(href="#")= article.title
+                                            p= article.description
+                                        a.homemain__newestarticles__slide__category(href="#", style=`--categorycolor: ${article.color};`)= article.category
+                                each article, index in articles
+                                    article.homemain__newestarticles__slide.swiper-slide
+                                        a.homemain__newestarticles__slide__imgbox(href='#')
+                                            img(src=article.image, alt=article.title)
+                                        .homemain__newestarticles__slide__textbox
+                                            h3
+                                                a(href="#")= article.title
+                                            p= article.description
+                                        a.homemain__newestarticles__slide__category(href="#", style=`--categorycolor: ${article.color};`)= article.category
+                                each article, index in articles
+                                    article.homemain__newestarticles__slide.swiper-slide
+                                        a.homemain__newestarticles__slide__imgbox(href='#')
+                                            img(src=article.image, alt=article.title)
+                                        .homemain__newestarticles__slide__textbox
+                                            h3
+                                                a(href="#")= article.title
+                                            p= article.description
+                                        a.homemain__newestarticles__slide__category(href="#", style=`--categorycolor: ${article.color};`)= article.category
+                .sexualitymain__twosliders
+                    //- cloned
+                    section.homemain__newestarticles
+                        .innercontainer
+                            .homemain__newestarticles__header.sectionheader
+                                h2 შშმ ქალები >
+                                .homemain__newestarticles__navigation
+                                    .homemain__newestarticles__navigation__left.women
+                                        include ../components/sliderarrowright
+                                    .homemain__newestarticles__navigation__right.women
+                                        include ../components/sliderarrowright
+                        .homemain__newestarticles__slider.innercontainer
+                            .homemain__newestarticles__swiper.swiper-container.women
+                                .homemain__newestarticles__wrapper.swiper-wrapper
+                                    each article, index in articles
+                                        article.homemain__newestarticles__slide.swiper-slide
+                                            a.homemain__newestarticles__slide__imgbox(href='#')
+                                                img(src=article.image, alt=article.title)
+                                            .homemain__newestarticles__slide__textbox
+                                                h3
+                                                    a(href="#")= article.title
+                                                p= article.description
+                                            a.homemain__newestarticles__slide__category(href="#", style=`--categorycolor: ${article.color};`)= article.category
+                                    each article, index in articles
+                                        article.homemain__newestarticles__slide.swiper-slide
+                                            a.homemain__newestarticles__slide__imgbox(href='#')
+                                                img(src=article.image, alt=article.title)
+                                            .homemain__newestarticles__slide__textbox
+                                                h3
+                                                    a(href="#")= article.title
+                                                p= article.description
+                                            a.homemain__newestarticles__slide__category(href="#", style=`--categorycolor: ${article.color};`)= article.category
+                                    each article, index in articles
+                                        article.homemain__newestarticles__slide.swiper-slide
+                                            a.homemain__newestarticles__slide__imgbox(href='#')
+                                                img(src=article.image, alt=article.title)
+                                            .homemain__newestarticles__slide__textbox
+                                                h3
+                                                    a(href="#")= article.title
+                                                p= article.description
+                                            a.homemain__newestarticles__slide__category(href="#", style=`--categorycolor: ${article.color};`)= article.category
+                    //- cloned
+                    section.homemain__newestarticles
+                        .innercontainer
+                            .homemain__newestarticles__header.sectionheader
+                                h2 lgbtq+ >
+                                .homemain__newestarticles__navigation
+                                    .homemain__newestarticles__navigation__left.lgbt
+                                        include ../components/sliderarrowright
+                                    .homemain__newestarticles__navigation__right.lgbt
+                                        include ../components/sliderarrowright
+                        .homemain__newestarticles__slider.innercontainer
+                            .homemain__newestarticles__swiper.swiper-container.lgbt
+                                .homemain__newestarticles__wrapper.swiper-wrapper
+                                    each article, index in articles
+                                        article.homemain__newestarticles__slide.swiper-slide
+                                            a.homemain__newestarticles__slide__imgbox(href='#')
+                                                img(src=article.image, alt=article.title)
+                                            .homemain__newestarticles__slide__textbox
+                                                h3
+                                                    a(href="#")= article.title
+                                                p= article.description
+                                            a.homemain__newestarticles__slide__category(href="#", style=`--categorycolor: ${article.color};`)= article.category
+                                    each article, index in articles
+                                        article.homemain__newestarticles__slide.swiper-slide
+                                            a.homemain__newestarticles__slide__imgbox(href='#')
+                                                img(src=article.image, alt=article.title)
+                                            .homemain__newestarticles__slide__textbox
+                                                h3
+                                                    a(href="#")= article.title
+                                                p= article.description
+                                            a.homemain__newestarticles__slide__category(href="#", style=`--categorycolor: ${article.color};`)= article.category
+                                    each article, index in articles
+                                        article.homemain__newestarticles__slide.swiper-slide
+                                            a.homemain__newestarticles__slide__imgbox(href='#')
+                                                img(src=article.image, alt=article.title)
+                                            .homemain__newestarticles__slide__textbox
+                                                h3
+                                                    a(href="#")= article.title
+                                                p= article.description
+                                            a.homemain__newestarticles__slide__category(href="#", style=`--categorycolor: ${article.color};`)= article.category
+
+        include ../layouts/_footer
+
+        include ../layouts/_scripts
+        //- only homepage
+        script(src="assets/js/swiper-bundle.min.js") 
+        script(src="assets/js/sexuality.js")

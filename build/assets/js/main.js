@@ -29,3 +29,20 @@ h4s.forEach(h4 => {
     }) 
 })
 
+const searchform = document.getElementById('searchform')
+const mobileSearchBtn = document.querySelector('.header__searchform__icon.mobile')
+const mobileSearchBtn__X = document.querySelector('.header__searchform__icon__X')
+
+mobileSearchBtn.addEventListener('click', e => {
+    if (!searchform.classList.contains('toggled')) {
+        e.preventDefault()
+        searchform.classList.add('toggled')
+        searchform.querySelector('input').focus()
+        mobileSearchBtn.classList.add('toggled')
+    }
+})
+
+mobileSearchBtn__X.addEventListener('click', () => {
+    searchform.classList.remove('toggled')
+    mobileSearchBtn.classList.remove('toggled')
+})

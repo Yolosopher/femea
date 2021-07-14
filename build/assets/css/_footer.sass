@@ -1,7 +1,8 @@
-.footer
+footer
     background-color: #c0d1f1
     background-image: url(../img/footercover.png)
     background-position: cover
+.footer
     color: #5E7DB7
     padding-top: 56px
     padding-bottom: 72px
@@ -16,6 +17,7 @@
 
         @include plus1025()
             justify-items: unset
+            justify-content: unset
             grid-gap: 10px
             grid-template-columns: repeat(4, 1fr)
     &__section
@@ -23,13 +25,13 @@
             margin-bottom: 50px
         h4
             font-family: firagobold
-            text-align: center
             @include font(18px, 22px)
             text-transform: uppercase
             margin-bottom: 30px
             pointer-events: none
             @media screen and ( max-width: 1024px )
                 cursor: pointer
+                text-align: center
                 pointer-events: all
                 display: flex
                 align-items: center
@@ -43,15 +45,21 @@
             display: grid
             --height: min-content
             grid-gap: 32px
-            height: 0
             overflow: hidden
             transition: .4s ease-out
             opacity: 0
+            height: 0
+            @include plus1025()
+                opacity: 1 !important
+                height: initial !important
+
             li
                 text-align: center
                 font-family: firagobook
                 @include font(16px, 19px)
                 opacity: .8
+                @include plus1025()
+                    text-align: unset
         &.toggled
             @media screen and ( max-width: 1024px )
                 h4

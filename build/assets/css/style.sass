@@ -16,3 +16,111 @@ html
 
 
 @import _footer
+
+@import _pagenav
+
+.sexualitymain
+    @media screen and ( max-width: 1024px )    
+        padding-left: 0
+        padding-right: 0
+    &__content
+        display: grid
+        @include plus1025()
+            grid-column-gap: 16px
+            grid-auto-rows: auto
+            grid-template-columns: 1fr 398px
+    &__description
+        margin-bottom: 45px
+        background-color: #fff
+        color: #000
+        font-family: firago
+        @include font(16px, 30px)
+        
+        border-radius: 20px
+        @include plus1025()
+            @include font(18px, 28px)
+        
+            padding: 40px
+        p
+            --height5: max-content
+            --heightfull: max-content
+            height: var(--height5)
+            overflow: hidden
+            padding: 40px 24px 0
+            @include maxcolumn(5)
+            transition: height .4s ease-out
+            @include plus1025()
+                padding: 0
+                height: initial
+                @include maxcolumn(unset)
+            &.toggled
+                @include maxcolumn(unset)
+                height: var(--heightfull)
+        &__hr
+            height: 100%
+            // position: relative
+            // right: 20px 
+            height: 1px
+            background-color: #F2F2F2
+            margin-top: 16px
+            @include plus1025()
+                display: none
+
+        &__toggler
+            cursor: pointer
+            height: 64px
+            display: flex
+            padding: 0 24px
+            cursor: pointer
+            justify-content: center
+            align-items: center
+            font-family: firagosemibold
+            color: rgba(#000, .3)
+            @include font(16px, 19px)                
+            border-bottom: 1px solid rgba(#709584, .16)
+            font-weight: 700
+            @include plus1025()
+                display: none
+            .off
+                display: none
+            &.toggled
+                .off
+                    display: inline
+                .on
+                    display: none
+                &::after
+                    transform: rotate(180deg)
+            &::after
+                content: url(../img/seemorearrow.svg)
+                margin-left: 6px
+                transform: rotate(0)
+                transition: transform .1s ease-out
+
+    .homemain__newestarticles__header
+        margin-top: 0
+    .homemain__populararticles
+        order: 1
+        &__header
+            margin-top: 0
+            @include plus1025()
+                margin-top: 0
+                
+        @include plus1025()
+            order: 0
+            grid-row: 1 / 3
+            grid-column: 2 / 3
+    &__twosliders
+        display: grid
+        width: 100%
+        @include plus1025()
+            grid-column: 1 / 3
+            grid-template-columns: 1fr 1fr
+            grid-gap: 16px
+        .homemain__newestarticles__slider
+            height: auto
+            margin-bottom: 50px
+            @include plus1025()
+                margin-bottom: 80px
+    .homemain__newestarticles__slider.real
+        @media screen and ( max-width: 1024px )
+            margin-bottom: 25px

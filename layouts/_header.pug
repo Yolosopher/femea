@@ -18,7 +18,11 @@ header.header
                     a(href="femea.html") FEMEA
         form#searchform.header__searchform(action="")
             input#search(type="text", name="search", placeholder="ძიება")
-            button.header__searchform__icon(type='submit')
+            button.header__searchform__icon.desktop(type='submit')
                 include ../components/search
+            button.header__searchform__icon__X(type='button')
+                include ../components/searchx
+        button.header__searchform__icon.mobile(type='submit', form='searchform')
+            include ../components/search
         .hamburger
             div
