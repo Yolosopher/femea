@@ -1,0 +1,207 @@
+-
+    const pageinfo = {
+        title: 'ჩემი სექსუალობა'
+    }
+-
+    const articleNames = [
+        'სიახლის სათაური შეიძლება იყოს ოხაზიანი',
+        'სიახლის სათაური შეიძლება იყოს ოხაზიანი ან საერთოდაც შეიძლება სამხაზიანიც',
+        'სტატიის სათაური იქნება ასეთი შეიძლება ორხაზ…',
+        'სიახლის სათაური შეიძლება იყოს ოხაზიანი ან საერთოდაც შეიძლება სამხაზიანიც',
+        'სტატიის სათაური იქნება ასეთი შეიძლება ორხაზ…',
+        'სიახლის სათაური შეიძლება იყოს ოხაზიანი ან საერთოდაც შეიძლება სამხაზიანიც'
+    ]
+-
+    const articles = [
+        {
+            title: 'სიახლის სათაური შეიძლება იყოს ოხაზიანი',
+            description: 'ეს არის სტატიის მოკლე შინაარსის ადგილი რომელიც ორ ხაზზე გრძელდება და ასე…',
+            image: 'assets/img/slideslatestnews/1.jpg',
+            category: 'ჩემი სექსუალობა',
+            color: '#D9C65C',
+            image1: 'assets/img/storyarticles/1.jpg',
+        },
+        {
+            title: 'სიახლის სათაური შეიძლება იყოს ოხაზიანი ან საერთოდაც შეიძლება სამხაზიანიც',
+            description: 'ეს არის სტატიის მოკლე შინაარსის ადგილი რომელიც ორ ხაზზე გრძელდება და ასე…',
+            image: 'assets/img/slideslatestnews/2.jpg',
+            category: 'ჩემი სხეული',
+            color: '#5CD9BC',
+            image1: 'assets/img/storyarticles/2.jpg',
+        },
+        {
+            title: 'სტატიის სათაური იქნება ასეთი შეიძლება ორხაზ…',
+            description: 'ეს არის სტატიის მოკლე შინაარსის ადგილი რომელიც ორ ხაზზე გრძელდება და ასე…',
+            image: 'assets/img/slideslatestnews/3.jpg',
+            category: 'ჩემი ფსიქიკა',
+            color: '#C0D1F1',
+            image1: 'assets/img/storyarticles/3.jpg',
+        },
+        {
+            title: 'სიახლის სათაური შეიძლება იყოს ოხაზიანი ან საერთოდაც შეიძლება სამხაზიანიც',
+            description: 'ეს არის სტატიის მოკლე შინაარსის ადგილი რომელიც ორ ხაზზე გრძელდება და ასე…',
+            image: 'assets/img/slideslatestnews/4.jpg',
+            category: 'ჩემი სექსუალობა',
+            color: 'blue',
+            image1: 'assets/img/storyarticles/1.jpg',
+        },
+        {
+            title: 'სტატიის სათაური იქნება ასეთი შეიძლება ორხაზ…',
+            description: 'ეს არის სტატიის მოკლე შინაარსის ადგილი რომელიც ორ ხაზზე გრძელდება და ასე…',
+            image: 'assets/img/slideslatestnews/5.jpg',
+            category: 'ჩემი სხეული',
+            color: 'red',
+            image1: 'assets/img/storyarticles/2.jpg',
+        },
+        {
+            title: 'სიახლის სათაური შეიძლება იყოს ოხაზიანი ან საერთოდაც შეიძლება სამხაზიანიც',
+            description: 'ეს არის სტატიის მოკლე შინაარსის ადგილი რომელიც ორ ხაზზე გრძელდება და ასე…',
+            image: 'assets/img/slideslatestnews/6.jpg',
+            category: 'ჩემი სექსუალობა',
+            color: 'red',
+            image1: 'assets/img/storyarticles/3.jpg',
+        }
+    ]
+
+doctype html
+html(lang="en")
+    head
+        link(rel="stylesheet", href="assets/css/swiper-bundle.min.css")
+        include ../layouts/_head
+    body(class=pageinfo.title=== 'Home' ? 'homebody' : '')
+        include ../layouts/_header
+
+        main.sexualitymain.container.statiamain
+            .sexualitymain__content
+                .statiamain__content
+                    article.statiamain__article
+                        h1.statiamain__title.innercontainer გამყრელიძის თქმით, განიხილება ქორწილების, წვეულებებისა და სხვა დიდი თავშეყრების აკრძალვა
+                        .statiamain__info.innercontainer 12 თებერვალი, 2021. | კატეგორია 1, კატეგორია 2, კატეგორია 3
+                        .statiamain__whitebg__mobile
+                            .statiamain__coverlink
+                                .shares__value.coverlink
+                                    .shares__container
+                                        input.sharearticle(type="text", value="http://127.0.0.1:5500/build/statia.html", disabled, title="http://127.0.0.1:5500/build/statia.html")
+                                        include ../components/clippboard
+                                    .shares__btn
+                                img(src="assets/img/statiacover.jpg", alt="")
+                            .statiamain__whitebg__desktop
+                                .statiamain__article__content
+                                    p
+                                        | Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                    p 
+                                        | It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like). that it has a more-or-less normal distribution of letters, as opposed to using ‘Content here, content here’, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for ‘lorem ipsum’ will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                                    
+                                    blockquote.quote
+                                        | Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+                                    p 
+                                        | It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like). that it has a more-or-less normal distribution of letters, as opposed to using ‘Content here, content here’, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for ‘lorem ipsum’ will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                                    .withimage
+                                        p 
+                                            | It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like). that it has a more-or-less normal distribution of letters, as opposed to using ‘Content here, content here’, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for ‘lorem ipsum’ will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                                        .withimage__imgbox
+                                            img(src="assets/img/statiainnerimg.jpg", alt="")
+                                .statiamain__tagsAndShares
+                                    .tags
+                                        .statiamain__tagsAndShares__label tags
+                                        ul.tags__ul
+                                            li
+                                                a(href="#") health care 
+                                            li
+                                                a(href="#") news 
+                                    .shares
+                                        .statiamain__tagsAndShares__label share article
+                                        .shares__value
+                                            .shares__container
+                                                input.sharearticle(type="text", value="http://127.0.0.1:5500/build/statia.html", disabled, title="http://127.0.0.1:5500/build/statia.html")
+                                                include ../components/clippboard
+                                            .shares__btn.hov
+                    //- cloned
+                    section.homemain__newestarticles
+                        .innercontainer
+                            .homemain__newestarticles__header.sectionheader
+                                h2 მსგავსი სტატიები
+                                .homemain__newestarticles__navigation
+                                    .homemain__newestarticles__navigation__left.real
+                                        include ../components/sliderarrowright
+                                    .homemain__newestarticles__navigation__right.real
+                                        include ../components/sliderarrowright
+                        .homemain__newestarticles__slider.innercontainer.real
+                            .homemain__newestarticles__swiper.swiper-container.real
+                                .homemain__newestarticles__wrapper.swiper-wrapper
+                                    each article, index in articles
+                                        article.homemain__newestarticles__slide.swiper-slide
+                                            a.homemain__newestarticles__slide__imgbox(href='statia.html')
+                                                img(src=article.image, alt=article.title)
+                                            .homemain__newestarticles__slide__textbox
+                                                h3
+                                                    a(href="statia.html")= article.title
+                                                p= article.description
+                                            a.homemain__newestarticles__slide__category(href="#", style=`--categorycolor: ${article.color};`)= article.category
+                                    each article, index in articles
+                                        article.homemain__newestarticles__slide.swiper-slide
+                                            a.homemain__newestarticles__slide__imgbox(href='#')
+                                                img(src=article.image, alt=article.title)
+                                            .homemain__newestarticles__slide__textbox
+                                                h3
+                                                    a(href="#")= article.title
+                                                p= article.description
+                                            a.homemain__newestarticles__slide__category(href="#", style=`--categorycolor: ${article.color};`)= article.category
+                                    each article, index in articles
+                                        article.homemain__newestarticles__slide.swiper-slide
+                                            a.homemain__newestarticles__slide__imgbox(href='#')
+                                                img(src=article.image, alt=article.title)
+                                            .homemain__newestarticles__slide__textbox
+                                                h3
+                                                    a(href="#")= article.title
+                                                p= article.description
+                                            a.homemain__newestarticles__slide__category(href="#", style=`--categorycolor: ${article.color};`)= article.category
+
+
+
+
+                //- cloned
+                aside
+                    section.homemain__populararticles
+                        .innercontainer
+
+                            .homemain__populararticles__header.sectionheader
+                                h2 პოპულარული სტატიები
+                                include ../components/fire
+                            .homemain__populararticles__articles.mgbt
+                                ul.homemain__populararticles__ul
+                                    each name, index in articleNames
+                                        li
+                                            h3
+                                                a(href="#")= name
+                                
+                                .homemain__populararticles__articles__toggler
+                                    span.on მეტის ნახვა
+                                    span.off აკეცვა
+                    section.homemain__populararticles.pink
+                        .innercontainer
+                            .homemain__populararticles__header.sectionheader
+                                h2 ახლა კითხულობენ
+                                include ../components/eye
+                            .homemain__populararticles__articles
+                                ul.homemain__populararticles__ul
+                                    each article, index in articles
+                                        li
+                                            h3
+                                                a(href="#")= article.title
+                                            p=article.description
+                                .homemain__populararticles__articles__toggler
+                                    span.on მეტის ნახვა
+                                    span.off აკეცვა
+
+
+            include ../components/sharemodal
+
+        include ../layouts/_questionmodal
+        include ../layouts/_footer
+
+        include ../layouts/_scripts
+        //- only homepage
+        script(src="assets/js/swiper-bundle.min.js") 
+        script(src="assets/js/statia.js")
+        //- script(src="assets/js/sexuality.js")

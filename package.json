@@ -5,7 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "pug src --out ./build --watch -P"
+    "pug": "pug src --out ./build --watch -P",
+    "sass": "sass build/assets/css/style.sass build/assets/css/style.css --watch",
+    "serve": "nodemon index"
   },
   "keywords": [],
   "author": "",

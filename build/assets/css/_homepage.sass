@@ -23,7 +23,7 @@
         @include plus1025()
             grid-template-columns: 1fr 370px
             height: 729px
-
+            border-radius: 30px
         &__cover
             position: absolute
             width: 100%
@@ -124,26 +124,33 @@
             height: 729px
             max-height: 100vh
         &__content
-            height: 100%
-            padding: 30px
+            // height: 100%
+            padding: 15px
             border-radius: 20px
             background-color: #EBEDFF
+            @include plus450()
+                padding: 30px
+            &:first-child
+                margin-bottom: 20px
         h4
             color: $grey
             font-family: firagosemibold
             text-transform: uppercase
+            font-feature-settings: "case" on
+            text-align: center
             margin-bottom: 25px
             @include font(18px, 22px)
             @include plus1025()
                 @include font(20px, 24px)
                 
         &__socials
+            margin: 0 auto
             display: grid
-            grid-template-columns: 1fr 1fr 1fr
+            grid-template-columns: repeat(3, 100px)
             grid-gap: 20px
             height: 70px
             width: 100%
-            margin-bottom: 50px
+            // margin-bottom: 50px
             @include plus380()
                 width: max-content
 
@@ -152,11 +159,13 @@
                 justify-content: center
                 align-items: center
                 height: 100%
-                max-width: 95px
+                min-width: 100px
+                max-width: 100px
                 border-radius: 16px
                 overflow: hidden
                 @include plus1025()
                     width: 100px
+                    min-width: unset
                 a
                     display: flex
 
@@ -166,10 +175,15 @@
                         &::after
                             content: url(../img/socials/fb.svg)
                 &.ig
-                    background-image: url(../img/socials/igcover.svg)
-                    background-size: cover
+                    // background-image: url(../img/socials/igcover.svg)
+                    // background-size: cover
                     background-repeat: no-repeat
+                    background: url(../img/socials/igcover.png)
+                    // background: radial-gradient(circle, rgba(255,220,128,1) 0%, rgba(253,29,29,1) 27.59%, rgba(131,58,180,1) 70.44%, rgba(64,93,230,1) 100%)
+                    background-size: cover
+                    // background-position: 85% top
                     
+                               
                     a
                         &::after
                             content: url(../img/socials/ig.svg)
@@ -181,6 +195,7 @@
         p
             font-family: firagomedium
             @include font(16px, 22px)
+            text-align: center
             
             margin-bottom: 24px
 
@@ -189,22 +204,23 @@
             grid-template-columns: 1fr 1fr
             grid-gap: 10px
             width: 100%
+            justify-items: center
             @include plus380()
-                width: max-content
+                // width: max
             a
                 img
                     height: 45px
                     object-fit: contain
                     @include plus1025()
-                        height: 167px
-                        max-width: 167px
+                        height: 131px
+                        max-width: 131px
                     &.mob
                         @include plus1025()
                             display: none
                     &.desk
                         border-radius: 22px
                         background: #fff
-                        border: 1px solid #707070
+                        // border: 1px solid #707070
                         box-shadow: 0px 16px 36px rgba(0, 0, 0, 0.16)
                         pointer-events: none
                         display: none
@@ -212,10 +228,11 @@
                             display: inline-block    
             span
                 display: block
-                margin-bottom: 16px
+                margin-top: 16px
                 font-family: firagobook
                 @include font(16px, 19px)
                 color: #000
+                text-align: center
     
     &__newestarticles
         width: 100%
@@ -267,12 +284,13 @@
             &.story
                 .homemain__newestarticles__slide
                     img
-                        object-position: center top
-                        transition: 1.4s ease-out
+                        object-position: center 0
+                        transition: .3s ease-out
+                        will-change: object-position
                     &:hover
                         img
                             transform: none !important
-                            object-position: center bottom
+                            object-position: center 100%
 
         &__wrapper
             // position: static !important
@@ -334,6 +352,7 @@
                 overflow: hidden
                 font-family: firagosemibold
                 text-transform: uppercase
+                font-feature-settings: "case" on
                 @include font(14px, 20px)
                 @include plus1025()
                     @include font(16px, 24px)
@@ -418,7 +437,7 @@
                 justify-content: center
                 align-items: center
                 font-family: firagosemibold
-                color: rgba(#000, .3)
+                color: #000
                 @include font(16px, 19px)                
                 border-bottom: 1px solid rgba(#709584, .16)
                 @include plus1025()
@@ -430,6 +449,10 @@
                         display: inline
                     .on
                         display: none
+            &.insexcats
+                margin-bottom: 20px
+                &:last-of-type
+                    margin-bottom: 65px
         &__ul
             display: grid
             width: 100%
@@ -437,7 +460,7 @@
             height: 300px
             transition: height .4s ease-out
             @include plus1025()
-                height: unset !important
+                height: 640px !important
             &.toggled
                 height: 600px
             li
@@ -456,8 +479,29 @@
                     @include maxcolumn(3)
                     @include plus1025()
                         line-height: 24px
-            
-
+            &.questionoften
+                li
+                    white-space: initial
+                    font-family: firagosemibold
+                    cursor: pointer
+                &.categoriess
+                    padding: 20px 35px
+                    grid-gap: 27.5px
+                    height: unset
+                    @include plus1025()
+                        margin-bottom: 20px !important
+                    li
+                        display: block
+                        color: #000 !important
+                        background-color: transparent !important
+                        height: unset !important
+                        padding: 0 !important
+                        height: unset !important
+                        padding-bottom: 27.5px !important
+                        &:last-of-type
+                            padding: 0 !important
+                            border: none !important
+                        // border: none !important
 .sectionheader
     height: 90px
     border-radius: 20px
@@ -469,6 +513,7 @@
     font-family: firagosemibold
     @include font(18px, 22px)
     text-transform: uppercase
+    font-feature-settings: "case" on
     margin-bottom: 20px
     @include plus1025()
         margin-top: 60px
@@ -485,3 +530,17 @@
 
 .swiper-wrapper
     box-sizing: border-box !important
+
+.homemain__newestarticles
+    .homemain__newestarticles__header
+        h2
+            width: max-content
+            a
+                display: flex
+                align-items: center
+                width: max-content
+                // display: inline-block
+                &::after
+                    margin-left: 19.4px
+                    content: url(../img/newarticlesarrow.svg)
+                    height: 18px

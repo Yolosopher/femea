@@ -72,15 +72,9 @@ $padL: calc( ((100vw - 10px) - 1697px) / 2)
     @media screen and (min-width: $width)
         @content
 
-// @mixin upperCase($bold)
-//     font-family: mtavruli !important
-//     text-transform: uppercase !important
-//     font-weight: 500 !important
-//     text-transform: uppercase
-//     @if $bold
-//         font-weight: 600 !important
-
-        
+@mixin upperCase()
+    text-transform: uppercase
+    font-feature-settings: "case" on
 
 @mixin blur($px)
     -webkit-filter: blur($px)

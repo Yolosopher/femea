@@ -25,7 +25,7 @@
             title: 'სიახლის სათაური შეიძლება იყოს ოხაზიანი ან საერთოდაც შეიძლება სამხაზიანიც',
             description: 'ეს არის სტატიის მოკლე შინაარსის ადგილი რომელიც ორ ხაზზე გრძელდება და ასე…',
             image: 'assets/img/slideslatestnews/2.jpg',
-            category: 'ჩემი კიტრი',
+            category: 'ჩემი სხეული',
             color: '#5CD9BC',
             image1: 'assets/img/storyarticles/2.jpg',
         },
@@ -87,23 +87,30 @@ html(lang="en")
                 section.homemain__populararticles.pink
                     .innercontainer
                         .homemain__populararticles__header.sectionheader
-                            h2 ხშირად დასმული კითხვები >
-                            include ../components/eye
-                        .homemain__populararticles__articles
-                            ul.homemain__populararticles__ul
+                            h2 ხშირად დასმული კითხვები
+                        .homemain__populararticles__articles.insexcats
+                            ul.homemain__populararticles__ul.questionoften
                                 each article, index in articles
-                                    li
-                                        h3
-                                            a(href="#")= article.title
-                                        p=article.description
+                                    li.questionsformodal(data-answer=`answer number ${index + 1}`, data-links='["https://www.google.com/", "https://www.facebook.com/"]')= (index + 1) + ' ხშირად დასმული კითხვა ნომერი' 
                             .homemain__populararticles__articles__toggler
                                 span.on მეტის ნახვა
                                 span.off აკეცვა
+                        .homemain__populararticles__header.sectionheader
+                            h2 კატეგორიები
+                        .homemain__populararticles__articles.insexcats
+                            ul.homemain__populararticles__ul.questionoften.categoriess
+                                li სექსი
+                                li სგგი
+                                li კონტრაცეპცია
+                                li მენსტრუაცია
+                                li ორსულობა
+                                li გენდერი და იდენტობა
+
                 //- cloned
                 section.homemain__newestarticles
                     .innercontainer
                         .homemain__newestarticles__header.sectionheader
-                            h2 ჩემი სექსუალობა >
+                            h2 ჩემი სექსუალობა
                             .homemain__newestarticles__navigation
                                 .homemain__newestarticles__navigation__left.real
                                     include ../components/sliderarrowright
@@ -114,29 +121,29 @@ html(lang="en")
                             .homemain__newestarticles__wrapper.swiper-wrapper
                                 each article, index in articles
                                     article.homemain__newestarticles__slide.swiper-slide
-                                        a.homemain__newestarticles__slide__imgbox(href='#')
+                                        a.homemain__newestarticles__slide__imgbox(href='statia.html')
                                             img(src=article.image, alt=article.title)
                                         .homemain__newestarticles__slide__textbox
                                             h3
-                                                a(href="#")= article.title
+                                                a(href="statia.html")= article.title
                                             p= article.description
                                         a.homemain__newestarticles__slide__category(href="#", style=`--categorycolor: ${article.color};`)= article.category
                                 each article, index in articles
                                     article.homemain__newestarticles__slide.swiper-slide
-                                        a.homemain__newestarticles__slide__imgbox(href='#')
+                                        a.homemain__newestarticles__slide__imgbox(href='statia.html')
                                             img(src=article.image, alt=article.title)
                                         .homemain__newestarticles__slide__textbox
                                             h3
-                                                a(href="#")= article.title
+                                                a(href="statia.html")= article.title
                                             p= article.description
                                         a.homemain__newestarticles__slide__category(href="#", style=`--categorycolor: ${article.color};`)= article.category
                                 each article, index in articles
                                     article.homemain__newestarticles__slide.swiper-slide
-                                        a.homemain__newestarticles__slide__imgbox(href='#')
+                                        a.homemain__newestarticles__slide__imgbox(href='statia.html')
                                             img(src=article.image, alt=article.title)
                                         .homemain__newestarticles__slide__textbox
                                             h3
-                                                a(href="#")= article.title
+                                                a(href="statia.html")= article.title
                                             p= article.description
                                         a.homemain__newestarticles__slide__category(href="#", style=`--categorycolor: ${article.color};`)= article.category
                 .sexualitymain__twosliders
@@ -144,7 +151,7 @@ html(lang="en")
                     section.homemain__newestarticles
                         .innercontainer
                             .homemain__newestarticles__header.sectionheader
-                                h2 შშმ ქალები >
+                                h2 შშმ ქალები
                                 .homemain__newestarticles__navigation
                                     .homemain__newestarticles__navigation__left.women
                                         include ../components/sliderarrowright
@@ -155,36 +162,36 @@ html(lang="en")
                                 .homemain__newestarticles__wrapper.swiper-wrapper
                                     each article, index in articles
                                         article.homemain__newestarticles__slide.swiper-slide
-                                            a.homemain__newestarticles__slide__imgbox(href='#')
+                                            a.homemain__newestarticles__slide__imgbox(href='statia.html')
                                                 img(src=article.image, alt=article.title)
                                             .homemain__newestarticles__slide__textbox
                                                 h3
-                                                    a(href="#")= article.title
+                                                    a(href="statia.html")= article.title
                                                 p= article.description
                                             a.homemain__newestarticles__slide__category(href="#", style=`--categorycolor: ${article.color};`)= article.category
                                     each article, index in articles
                                         article.homemain__newestarticles__slide.swiper-slide
-                                            a.homemain__newestarticles__slide__imgbox(href='#')
+                                            a.homemain__newestarticles__slide__imgbox(href='statia.html')
                                                 img(src=article.image, alt=article.title)
                                             .homemain__newestarticles__slide__textbox
                                                 h3
-                                                    a(href="#")= article.title
+                                                    a(href="statia.html")= article.title
                                                 p= article.description
                                             a.homemain__newestarticles__slide__category(href="#", style=`--categorycolor: ${article.color};`)= article.category
                                     each article, index in articles
                                         article.homemain__newestarticles__slide.swiper-slide
-                                            a.homemain__newestarticles__slide__imgbox(href='#')
+                                            a.homemain__newestarticles__slide__imgbox(href='statia.html')
                                                 img(src=article.image, alt=article.title)
                                             .homemain__newestarticles__slide__textbox
                                                 h3
-                                                    a(href="#")= article.title
+                                                    a(href="statia.html")= article.title
                                                 p= article.description
                                             a.homemain__newestarticles__slide__category(href="#", style=`--categorycolor: ${article.color};`)= article.category
                     //- cloned
                     section.homemain__newestarticles
                         .innercontainer
                             .homemain__newestarticles__header.sectionheader
-                                h2 lgbtq+ >
+                                h2 lgbtq+
                                 .homemain__newestarticles__navigation
                                     .homemain__newestarticles__navigation__left.lgbt
                                         include ../components/sliderarrowright
@@ -195,32 +202,33 @@ html(lang="en")
                                 .homemain__newestarticles__wrapper.swiper-wrapper
                                     each article, index in articles
                                         article.homemain__newestarticles__slide.swiper-slide
-                                            a.homemain__newestarticles__slide__imgbox(href='#')
+                                            a.homemain__newestarticles__slide__imgbox(href='statia.html')
                                                 img(src=article.image, alt=article.title)
                                             .homemain__newestarticles__slide__textbox
                                                 h3
-                                                    a(href="#")= article.title
+                                                    a(href="statia.html")= article.title
                                                 p= article.description
                                             a.homemain__newestarticles__slide__category(href="#", style=`--categorycolor: ${article.color};`)= article.category
                                     each article, index in articles
                                         article.homemain__newestarticles__slide.swiper-slide
-                                            a.homemain__newestarticles__slide__imgbox(href='#')
+                                            a.homemain__newestarticles__slide__imgbox(href='statia.html')
                                                 img(src=article.image, alt=article.title)
                                             .homemain__newestarticles__slide__textbox
                                                 h3
-                                                    a(href="#")= article.title
+                                                    a(href="statia.html")= article.title
                                                 p= article.description
                                             a.homemain__newestarticles__slide__category(href="#", style=`--categorycolor: ${article.color};`)= article.category
                                     each article, index in articles
                                         article.homemain__newestarticles__slide.swiper-slide
-                                            a.homemain__newestarticles__slide__imgbox(href='#')
+                                            a.homemain__newestarticles__slide__imgbox(href='statia.html')
                                                 img(src=article.image, alt=article.title)
                                             .homemain__newestarticles__slide__textbox
                                                 h3
-                                                    a(href="#")= article.title
+                                                    a(href="statia.html")= article.title
                                                 p= article.description
                                             a.homemain__newestarticles__slide__category(href="#", style=`--categorycolor: ${article.color};`)= article.category
 
+        include ../layouts/_questionmodal
         include ../layouts/_footer
 
         include ../layouts/_scripts

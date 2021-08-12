@@ -5,7 +5,8 @@
 body
     background-color: #F7F8FF
     // padding: 0 20px
-
+    &.noscroll
+        overflow: hidden
 html
     --swiper-theme-color: $dark !important
     font-family: firagomedium
@@ -19,108 +20,413 @@ html
 
 @import _pagenav
 
-.sexualitymain
-    @media screen and ( max-width: 1024px )    
-        padding-left: 0
-        padding-right: 0
-    &__content
-        display: grid
-        @include plus1025()
-            grid-column-gap: 16px
-            grid-auto-rows: auto
-            grid-template-columns: 1fr 398px
-    &__description
-        margin-bottom: 45px
-        background-color: #fff
-        color: #000
-        font-family: firago
-        @include font(16px, 30px)
-        
-        border-radius: 20px
-        @include plus1025()
-            @include font(18px, 28px)
-        
-            padding: 40px
-        p
-            --height5: max-content
-            --heightfull: max-content
-            height: var(--height5)
-            overflow: hidden
-            padding: 40px 24px 0
-            @include maxcolumn(5)
-            transition: height .4s ease-out
-            @include plus1025()
-                padding: 0
-                height: initial
-                @include maxcolumn(unset)
-            &.toggled
-                @include maxcolumn(unset)
-                height: var(--heightfull)
-        &__hr
-            height: 100%
-            // position: relative
-            // right: 20px 
-            height: 1px
-            background-color: #F2F2F2
-            margin-top: 16px
-            @include plus1025()
-                display: none
+@import _questionmodal
 
-        &__toggler
-            cursor: pointer
-            height: 64px
+@import _sexualitymain
+
+
+
+.statiamain
+    padding-top: 30px
+    @include plus1025()
+        padding-top: 50px
+    .sexualitymain__content
+        display: flex
+        flex-direction: column
+        @include plus1025()
             display: flex
-            padding: 0 24px
-            cursor: pointer
-            justify-content: center
-            align-items: center
-            font-family: firagosemibold
-            color: rgba(#000, .3)
-            @include font(16px, 19px)                
-            border-bottom: 1px solid rgba(#709584, .16)
-            font-weight: 700
-            @include plus1025()
-                display: none
-            .off
-                display: none
-            &.toggled
-                .off
-                    display: inline
-                .on
-                    display: none
-                &::after
-                    transform: rotate(180deg)
-            &::after
-                content: url(../img/seemorearrow.svg)
-                margin-left: 6px
-                transform: rotate(0)
-                transition: transform .1s ease-out
-
-    .homemain__newestarticles__header
-        margin-top: 0
-    .homemain__populararticles
-        order: 1
-        &__header
-            margin-top: 0
-            @include plus1025()
-                margin-top: 0
-                
-        @include plus1025()
-            order: 0
-            grid-row: 1 / 3
-            grid-column: 2 / 3
-    &__twosliders
-        display: grid
+            flex-direction: row
+            .homemain__populararticles.pink
+                flex-shrink: 0
+    .homemain__newestarticles
         width: 100%
-        @include plus1025()
-            grid-column: 1 / 3
-            grid-template-columns: 1fr 1fr
-            grid-gap: 16px
-        .homemain__newestarticles__slider
-            height: auto
-            margin-bottom: 50px
+        overflow: hidden
+    &__whitebg
+        &__mobile
+            padding: 20px
+            border-radius: 30px 30px 0px 0px
+            background-color: #fff
+            margin-bottom: 40px
             @include plus1025()
-                margin-bottom: 80px
-    .homemain__newestarticles__slider.real
-        @media screen and ( max-width: 1024px )
-            margin-bottom: 25px
+                margin-bottom: 0
+                padding: 0
+                border-radius: 0
+                background-color: transparent
+        &__desktop
+            @include plus1025()
+                padding: 45px
+                background-color: #fff
+                border-radius: 20px
+                margin-bottom: 50px
+    &__content
+        width: 100%
+        display: flex
+        flex-direction: column
+        @include plus1025()
+            flex-grow: 1
+            width: 0
+    &__title
+        font-family: firagosemibold
+        @include upperCase()
+        color: #000
+        @include font(18px, 22px)
+        margin-bottom: 44px
+        @include plus1025()
+            margin-bottom: 12px
+            @include font(30px, 46px)
+            
+    &__info
+        font-family: firagobook
+        color: #000
+        opacity: .5
+        @include font(14px, 22px)
+        margin-bottom: 28px
+        @include plus1025()
+            margin-bottom: 30px
+    &__coverlink
+        width: 100%
+        height: 230px
+        position: relative
+        overflow: hidden
+        border-radius: 20px
+        margin-bottom: 40px
+        @include plus1025()
+            height: 557px
+            margin-bottom: 37px
+        img
+            width: 100%
+            height: 100%
+            object-fit: cover
+    &__article
+        &__content
+            // padding: 20px
+            margin-bottom: 30px
+            @include plus1025()
+                padding-bottom: 53px
+                border-bottom: 1px solid rgba(#707070, .09)
+                margin-bottom: 39px
+            p
+                user-select: text
+                @include font(16px, 30px)
+                font-family: firagobook
+                color: #000
+            > p
+                margin-bottom: 2em
+
+            .quote
+                user-select: text
+                border-radius: 20px
+                display: block
+                margin-bottom: 2em
+                font-family: gothambookitalic
+                @include font(16px, 30px)
+                font-weight: 500
+                padding: 40px 30px
+                background-color: #005955
+                color: #fff
+                @include plus1025()
+                    color: #000
+                    background-color: #C0D1F1
+                    display: grid
+                    grid-template-columns: auto 1fr
+                    grid-gap: 32px
+                &::before
+                    content: url(../img/quotemobile.svg)
+                    display: block
+                    margin-bottom: 20px
+                    width: 84.87px
+                    height: 60.62px
+                    @include plus1025()
+                        content: url(../img/quote.svg)
+                    // opacity: 
+            .withimage
+                @include plus1025()
+                    display: grid
+                    grid-template-columns: 1fr 1fr
+                    grid-gap: 21px
+                p
+                    margin-bottom: 50px
+                    @include plus1025()
+                        margin-bottom: 0
+                &__imgbox
+                    width: 100%
+                    height: 212px
+                    overflow: hidden
+                    border-radius: 10px
+                    @include plus1025()
+                        height: 443px
+                    img
+                        width: 100%
+                        height: 100%
+                        object-fit: cover
+    &__tagsAndShares
+        display: grid
+        grid-gap: 30px
+        width: 100%
+        margin-bottom: 10px
+        @include plus1025()
+            margin-bottom: 0
+            display: flex
+            align-items: center
+            justify-content: space-between
+            grid-gap: 0
+        &__label
+            font-family: firagobold
+            font-weight: 700
+            color: #000
+            @include font(20px, 24px)
+            text-transform: capitalize
+            margin-bottom: 18px
+            @include plus1025()
+                margin-bottom: 24px
+        .tags
+            &__ul
+                height: 60px
+                display: flex
+                align-items: center
+                li
+                    display: inline-block
+                    &:not(:last-of-type)
+                        margin-right: 20px
+                    a
+                        padding: 22px
+                        border-radius: 10px
+                        background-color: #F9F9F9
+                        display: inline-block
+    .homemain__newestarticles__slider
+        @include plus1025()
+            height: #{310px + 72px}
+    .homemain__populararticles__ul li
+        @include plus1025()
+            &:last-of-type
+                border: none !important
+    .mgbt
+        margin-bottom: 30px !important
+        @include plus1025()
+            margin-bottom: 35px !important
+.statiamain
+    aside
+        @include plus1025()
+            max-width: 360px
+        @include plus1900()
+            max-width: 398px
+    .shares
+        max-width: 348px
+        width: 100%
+        // height: 60px
+        display: flex
+        flex-direction: column
+        &__value
+            display: grid
+            grid-template-columns: 1fr auto
+            grid-gap: 10px
+            max-width: 382px
+            width: 100%
+            align-items: center
+            &.coverlink
+                position: absolute
+                right: 15px
+                top: 18px
+                display: none
+                @include plus1025()
+                    display: grid
+            &.modal
+                max-width: unset
+                display: flex
+                grid-gap: 0
+                width: 100%
+                .shares__container
+                    // padding
+                    width: 100%
+        &__container
+            cursor: pointer
+            padding: 0 20px
+            display: flex
+            align-items: center
+            height: 60px
+            border-radius: 9px
+            background-color: #F9F9F9
+            input
+                width: 0
+                flex-grow: 1
+                user-select: text
+                pointer-events: none
+                @include maxcolumn(1)
+                transition: color .3s ease-out
+            svg
+                margin-left: 5px
+                path
+                    transition: stroke .3s ease-out
+            &:hover
+                input
+                    color: #12A79D
+                svg path
+                    stroke: #12A79D
+            &.coppied
+                input
+                    color: #12A79D
+                svg path
+                    stroke: #12A79D
+ 
+
+        &__btn
+            display: flex
+            border-radius: 9px
+            background-color: #C0D1F1
+            width: 60px
+            height: 60px
+            cursor: pointer
+            display: flex
+            align-items: center
+            justify-content: center
+            &::after
+                content: url(../img/share.svg)
+            &.hov
+                @include plus1025()
+                    background-color: #FBD14C
+                    transition: box-shadow .1s ease-out
+                    box-shadow: 0px 10px 30px rgba(239, 199, 90, 0)
+                    &:hover
+                        box-shadow: 0px 10px 30px rgba(239, 199, 90, 0.7)
+
+
+
+.sharemodal
+    position: fixed
+    max-height: calc(100vh - 50px)
+    left: 50%
+    top: 200vh
+    transform: translate(-50%, -50%)
+    border-radius: 30px
+    z-index: 99
+    width: calc(100% - 20px)
+    height: auto
+    background-color: #fff
+    padding: 30px 40px
+    transition: top .4s ease-out
+    @include plus1025()
+        width: max-content
+        max-width: 548px
+    &.toggled
+        top: 50%
+    &__container
+        display: flex
+        width: 100%
+        flex-direction: column
+
+    &__header
+        display: flex
+        // align-items: flex-start
+        justify-content: space-between
+        &__left
+            p
+                font-family: firagobold
+                @include font(22px, 24px)
+                color: #000
+                margin-bottom: 3px
+                text-transform: capitalize
+            h6
+                font-family: firagobook
+                @include font(14px, 22px)
+                color: rgba(#000, .45)
+                margin-bottom: 18px
+                @include maxcolumn(1)
+                max-height: 22px
+    &__shares
+        margin-bottom: 18px
+        p
+            font-family: gothammedium
+            @include font(16px, 24px)
+            color: #000
+            font-weight: 500
+            margin-bottom: 16px
+            text-transform: capitalize
+        &__ul
+            display: grid
+            grid-gap: 10px
+            width: 100%
+            @include plus1025()
+                grid-template-columns: repeat(5, 80px)
+                grid-gap: 17px
+            li
+                display: inline-block
+                a
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    border-radius: 20px
+                    width: 100%
+                    height: 80px
+                    &::after
+                        display: inline-block
+                        height: 27px
+                    &.fb
+                        background-color: #4267B2
+                        &::after
+                            content: url(../img/shares/fb.svg)
+                        &:hover
+                            filter: drop-shadow(0px 10px 30px rgba(66, 103, 178, 0.26))
+                            box-shadow: 0px 10px 30px rgba(66, 103, 178, 0.26)
+                            
+
+                    &.msgr
+                        background-color: #00B2FF
+                        &::after
+                            content: url(../img/shares/msgr.svg)
+                        &:hover
+                            filter: drop-shadow(0px 10px 30px rgba(0, 178, 255, 0.26))
+                    &.ig
+                        background-color: #E1306C
+                        &::after
+                            content: url(../img/shares/ig.svg)
+                        &:hover
+                            filter: drop-shadow(0px 10px 30px rgba(225, 48, 108, 0.26))
+                    &.lk
+                        background-color: #2D72C5
+                        &::after
+                            content: url(../img/shares/lk.svg)
+                        &:hover
+                            filter: drop-shadow(0px 10px 30px rgba(40, 103, 178, 0.26))
+                    &.mail
+                        background-color: #C71610
+                        &::after
+                            content: url(../img/shares/mail.svg)
+                        &:hover
+                            filter: drop-shadow(0px 10px 30px rgba(199, 22, 16, 0.26))
+
+    &__X
+        width: 50px
+        height: 50px
+        cursor: pointer
+        &::after
+            content: url(../img/questionmodalx.svg)
+            width: 50px
+            height: 50px
+
+
+
+
+
+
+    &__bg
+        position: fixed
+        width: 100%
+        height: 100vh
+        top: 0
+        right: 0
+        background-color: rgba(#000, .5)
+        z-index: 98
+        display: none
+        &.toggled
+            display: inline-block
+
+
+
+
+
+
+
+
+
+
+

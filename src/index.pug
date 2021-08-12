@@ -25,7 +25,7 @@
             title: 'სიახლის სათაური შეიძლება იყოს ოხაზიანი ან საერთოდაც შეიძლება სამხაზიანიც',
             description: 'ეს არის სტატიის მოკლე შინაარსის ადგილი რომელიც ორ ხაზზე გრძელდება და ასე…',
             image: 'assets/img/slideslatestnews/2.jpg',
-            category: 'ჩემი კიტრი',
+            category: 'ჩემი სხეული',
             color: '#5CD9BC',
             image1: 'assets/img/storyarticles/2.jpg',
         },
@@ -79,13 +79,14 @@ html(lang="en")
                 .homemain__herocontent__articles.swiper-container
                     ul.homemain__herocontent__articles__ul.swiper-wrapper
                         each name, index in articleNames
-                            li.swiper-slide
-                                h3
-                                    a(href="#")= name
-                        each name, index in articleNames
-                            li.swiper-slide
-                                h3
-                                    a(href="#")= name
+                            if (index < 5)
+                                li.swiper-slide
+                                    h3
+                                        a(href="#")= name
+                        //- each name, index in articleNames
+                        //-     li.swiper-slide
+                        //-         h3
+                        //-             a(href="#")= name
             section.homemain__contactinfo
                 .homemain__contactinfo__content
                     h4 გამოგვყევი
@@ -96,21 +97,23 @@ html(lang="en")
                             a(href="#", target='_blank')
                         li.yt
                             a(href="#", target='_blank')
+                .homemain__contactinfo__content
                     h4 safe you
                     p გადმოწერე აპლიკაცია, იყავი უსაფრთხოდ!
                     .homemain__contactinfo__downloads
                         a.googleplay(href='#', target='_blank')
-                            span Android
                             img.mob(src="assets/img/downloads/googleplay.png", alt="") 
                             img.desk(src="assets/img/downloads/code.png", alt="") 
+                            span Android
                         a.appstore(href='#', target='_blank') 
-                            span IOS
                             img.mob(src="assets/img/downloads/appstore.png", alt="") 
                             img.desk(src="assets/img/downloads/code.png", alt="") 
+                            span IOS
             section.homemain__newestarticles
                 .innercontainer
                     .homemain__newestarticles__header.sectionheader
-                        h2 უახლესი სტატიები >
+                        h2 
+                            a(href="#") უახლესი სტატიები
                         .homemain__newestarticles__navigation
                             .homemain__newestarticles__navigation__left.real
                                 include ../components/sliderarrowright
@@ -121,36 +124,36 @@ html(lang="en")
                         .homemain__newestarticles__wrapper.swiper-wrapper
                             each article, index in articles
                                 article.homemain__newestarticles__slide.swiper-slide
-                                    a.homemain__newestarticles__slide__imgbox(href='#')
+                                    a.homemain__newestarticles__slide__imgbox(href='statia.html')
                                         img(src=article.image, alt=article.title)
                                     .homemain__newestarticles__slide__textbox
                                         h3
-                                            a(href="#")= article.title
+                                            a(href="statia.html")= article.title
                                         p= article.description
                                     a.homemain__newestarticles__slide__category(href="#", style=`--categorycolor: ${article.color};`)= article.category
                             each article, index in articles
                                 article.homemain__newestarticles__slide.swiper-slide
-                                    a.homemain__newestarticles__slide__imgbox(href='#')
+                                    a.homemain__newestarticles__slide__imgbox(href='statia.html')
                                         img(src=article.image, alt=article.title)
                                     .homemain__newestarticles__slide__textbox
                                         h3
-                                            a(href="#")= article.title
+                                            a(href="statia.html")= article.title
                                         p= article.description
                                     a.homemain__newestarticles__slide__category(href="#", style=`--categorycolor: ${article.color};`)= article.category
                             each article, index in articles
                                 article.homemain__newestarticles__slide.swiper-slide
-                                    a.homemain__newestarticles__slide__imgbox(href='#')
+                                    a.homemain__newestarticles__slide__imgbox(href='statia.html')
                                         img(src=article.image, alt=article.title)
                                     .homemain__newestarticles__slide__textbox
                                         h3
-                                            a(href="#")= article.title
+                                            a(href="statia.html")= article.title
                                         p= article.description
                                     a.homemain__newestarticles__slide__category(href="#", style=`--categorycolor: ${article.color};`)= article.category
             
             section.homemain__populararticles
                 .innercontainer
                     .homemain__populararticles__header.sectionheader
-                        h2 პოპულარული სტატიები >
+                        h2 პოპულარული სტატიები
                         include ../components/fire
                     .homemain__populararticles__articles
                         ul.homemain__populararticles__ul
@@ -173,7 +176,7 @@ html(lang="en")
             section.homemain__newestarticles.last
                 .innercontainer
                     .homemain__newestarticles__header.sectionheader
-                        h2 ჩემი ამბავი >
+                        h2 ჩემი ამბავი
                         .homemain__newestarticles__navigation
                             .homemain__newestarticles__navigation__left.story
                                 include ../components/sliderarrowright
@@ -184,36 +187,33 @@ html(lang="en")
                         .homemain__newestarticles__wrapper.swiper-wrapper
                             each article, index in articles
                                 article.homemain__newestarticles__slide.swiper-slide
-                                    a.homemain__newestarticles__slide__imgbox(href='#')
+                                    a.homemain__newestarticles__slide__imgbox(href='statia.html')
                                         img(src=article.image1, alt=article.title)
                                     .homemain__newestarticles__slide__textbox
                                         h3
-                                            a(href="#")= article.title
+                                            a(href="statia.html")= article.title
                                         p= article.description
-                                    a.homemain__newestarticles__slide__category(href="#", style=`--categorycolor: ${article.color};`)= article.category
                             each article, index in articles
                                 article.homemain__newestarticles__slide.swiper-slide
-                                    a.homemain__newestarticles__slide__imgbox(href='#')
+                                    a.homemain__newestarticles__slide__imgbox(href='statia.html')
                                         img(src=article.image1, alt=article.title)
                                     .homemain__newestarticles__slide__textbox
                                         h3
-                                            a(href="#")= article.title
+                                            a(href="statia.html")= article.title
                                         p= article.description
-                                    a.homemain__newestarticles__slide__category(href="#", style=`--categorycolor: ${article.color};`)= article.category
                             each article, index in articles
                                 article.homemain__newestarticles__slide.swiper-slide
-                                    a.homemain__newestarticles__slide__imgbox(href='#')
+                                    a.homemain__newestarticles__slide__imgbox(href='statia.html')
                                         img(src=article.image1, alt=article.title)
                                     .homemain__newestarticles__slide__textbox
                                         h3
-                                            a(href="#")= article.title
+                                            a(href="statia.html")= article.title
                                         p= article.description
-                                    a.homemain__newestarticles__slide__category(href="#", style=`--categorycolor: ${article.color};`)= article.category
             //- cloned
             section.homemain__populararticles.pink
                 .innercontainer
                     .homemain__populararticles__header.sectionheader
-                        h2 ახლა კითხულობენ >
+                        h2 ახლა კითხულობენ
                         include ../components/eye
                     .homemain__populararticles__articles
                         ul.homemain__populararticles__ul

@@ -2,7 +2,7 @@ body
     &:not(.homebody)
         padding-top: 100px
 
-
+@import _variables
 @import _hamburger
 .hamburger
     @include plus1025()
@@ -23,9 +23,13 @@ body
         align-items: center
         @include plus1025()
             display: grid
-            grid-template-columns: auto 1fr 360px
+            grid-template-columns: auto 1fr minmax(auto, 360px)
+        @include sizePlus(1430px)
+        
+            grid-template-columns: auto 1fr minmax(auto, 360px)
+        
         @include plus1900()
-            grid-template-columns: auto 1fr 400px
+            grid-template-columns: auto 1fr minmax(auto, 360px)
     &__logo
         position: relative
         z-index: 6
@@ -93,15 +97,42 @@ body
             @include plus1900()
                 grid-gap: 40px
                 // grid-gap: 30px
-            li
+            > li
                 max-width: max-content
                 font-family: firago
                 color: $darkblue
                 text-transform: uppercase
+                font-feature-settings: "case" on
                 @include font(24px, 28px)
+                position: relative
                 @include plus1025()
                     color: #000
                     @include font(16px, 19px)
+                &.toggled
+                    .innerul
+                        left: 0
+                        @include plus1025()
+                            left: 0
+                            // top: calc(-400px - var(--height))
+                &.hovered
+                    .innerul
+                        @include plus1025()
+                            opacity: 1
+                            top: #{65px + 19px}
+                        &::after
+                            @include plus1025()
+                                // top: #{65px + 19px}
+                &:not(:last-child)
+
+                    .respoarrow
+                        @include plus1025()
+                            display: none
+                        &::after
+                            content: url(../img/responavrightarrow.svg)
+                            margin-left: 15px
+                    
+                            
+                            
     &__searchform
         display: flex
         align-items: center
@@ -116,11 +147,12 @@ body
         z-index: 7
         height: 100px
         padding: 0 20px
-        padding-left: 
-        background-color: #968DFF
+        // padding-left: 
+        background-color: #87A2D6
         transform: translateY(-101%)
         transition: .4s ease-out
         @include plus1025()
+            min-width: 250px
             padding: 0
             transform: none
             height: 66px
@@ -129,8 +161,8 @@ body
             margin-left: 0
             margin-right: 0
             border-radius: 16px
-            background-color: $blue
-            border-color: #8075fa
+            background-color: #87A2D6
+            border-color: #87A2D6
         @include plus1900()
             // margin-left: 121px
         input
@@ -141,6 +173,8 @@ body
             flex-basis: 0
             flex-shrink: 1
             padding-right: 70px
+            @include plus1025()
+                width: 0
             &::placeholder
                 padding-right: 0
                 color: #fff
@@ -179,3 +213,100 @@ body
                     display: none
         &.toggled
             transform: translateY(0)
+
+
+
+.innerul
+    --height: 300px
+    grid-gap: 30px
+    left: 100vw
+    overflow: hidden
+    top: 0
+
+    position: fixed
+    top: 0
+    left: 100%
+
+    width: 100%
+    height: 100vh
+    padding-top: 100px
+    align-items: center
+    align-content: center
+    display: grid
+    grid-auto-rows: auto
+    z-index: 6
+    transition: opacity .4s ease-out
+    background-color: #EBEDFF
+    justify-content: center
+    @include plus1025()
+        overflow: visible
+        opacity: 0
+        border-radius: 10px
+        position: absolute
+        background-color: #fff
+        left: 50%
+        transform: translateX(-50%)
+        width: 273px
+        top: calc(-400px - var(--height))
+        grid-gap: 0
+        padding: 0
+        justify-content: center
+        height: unset
+        // justify-items: stretch
+        justify-content: stretch
+
+    &__li
+        max-width: max-content
+        font-family: firago
+        color: $darkblue
+        text-transform: uppercase
+        font-feature-settings: "case" on
+        @include font(24px, 28px)
+        transition: background-color .1s ease-out
+        display: block
+        border-radius: 10px
+        @include plus1025()
+            background-color: #fff
+            display: flex
+            max-width: 1000%
+            justify-content: center
+            align-items: center
+            font-family: firagobook
+            @include font(14px, 17px)
+            color: #000
+            height: 54px
+            width: 100%
+
+            &:hover
+                background-color: #F5F5F5
+        // 
+            &:not(:last-of-type)
+                border-bottom: 1px solid rgba(#707070, .09)
+
+    &::after
+        @include plus1025()
+            content: ''
+            transform: translate(-50%, -50%) rotate(45deg)
+            width: 30px
+            height: 30px
+            display: inline-block
+            border-radius: 6px
+            background-color: #fff
+            top: 0
+            left: 50%
+            position: absolute
+            z-index: -1
+            transition: .4s ease-out
+
+    &__goback
+        cursor: pointer
+        position: absolute
+        left: 20px
+        top: calc(50px + 50%)
+        transform: translateY(-50%)
+        &::after
+            content: url(../img/responavrightarrow.svg)
+            transform: rotate(-180deg)
+            display: inline-block
+        @include plus1025()
+            display: none

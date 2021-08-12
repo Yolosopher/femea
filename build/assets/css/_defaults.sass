@@ -53,24 +53,34 @@ input:-webkit-autofill:active
     transition: background-color 5000s ease-in-out 0s
 
 
+@import _variables
 
 .container
     padding: 0 20px
-    max-width: 1150px
+    // max-width: 1150px
     width: 100%
     margin: 0 auto
     @include plus1025()
-        max-width: 1680px
+        padding: 0 20px
+    @include sizePlus(1366px)
+        padding: 0 66px
+        // max-width: 1680px
+    @include sizePlus(1430px)
+        padding: 0 140px
+    @include plus1900()
+        padding: 0 344px
 .innercontainer
     padding: 0 20px
-    max-width: 1150px
+    // max-width: 1150px
     width: 100%
     margin: 0 auto
     @include plus1025()
-        padding: 0
-        max-width: 1680px
-    @include plus1900()
-
+        padding: 0 
+    // @include sizePlus(1367px)
+    //     padding: 0 66px
+    //     max-width: 1680px
+    // @include plus1900()
+    //     padding: 0 344px
 a, button, input, textarea
     color: inherit
     text-decoration: none

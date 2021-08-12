@@ -12,14 +12,12 @@ let herocontent_articles_swiper = new Swiper('.homemain__herocontent__articles',
     breakpoints: {
         1025: {
             spaceBetween: 0,
-            speed: 2000,
+            speed: 300,
             slidesPerView: 'auto',
+            loop: false,
             direction: 'vertical',
             centeredSlides: false,
-            autoplay: {
-                delay: 0,
-                disableOnInteraction: false,
-            },
+            autoplay: false
         }
     }
 })
@@ -71,10 +69,7 @@ let newssliderStory = new Swiper('.homemain__newestarticles__swiper.story', {
     }
 })
 
-const popularMobileTogglerBtns = document.querySelectorAll('.homemain__populararticles__articles__toggler')
-
-
-popularMobileTogglerBtns.forEach(popularMobileTogglerBtn => {
+;[...document.querySelectorAll('.homemain__populararticles__articles__toggler')].forEach(popularMobileTogglerBtn => {
     popularMobileTogglerBtn.addEventListener('click', () => {
         const popularsUl = popularMobileTogglerBtn.parentElement.querySelector('.homemain__populararticles__ul')
         popularMobileTogglerBtn.classList.toggle('toggled')

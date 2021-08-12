@@ -5,15 +5,50 @@ header.header
         nav.header__nav
             ul.header__nav__ul
                 li
-                    a(href="my-sexuality.html") ჩემი სექსუალობა
+                    a(href="my-sexuality.html")
+                        span ჩემი სექსუალობა
+                    span.respoarrow
+                    ul.innerul
+                        .innerul__goback
+                        each a, i in Array(5)
+                            li.innerul__li
+                                a(href="innercategory.html")= 'ქვეკატეგორია' + (i + 1)
                 li
-                    a(href="my-psychics.html") ჩემი ფსიქიკა
+                    a(href="my-psychics.html")
+                        span ჩემი ფსიქიკა
+                    span.respoarrow
+                    ul.innerul
+                        .innerul__goback
+                        each a, i in Array(5)
+                            li.innerul__li
+                                a(href="innercategory.html")= 'ქვეკატეგორია' + (i + 1)
                 li
-                    a(href="my-body.html") ჩემი სხეული
+                    a(href="my-body.html")
+                        span ჩემი სხეული
+                    span.respoarrow
+                    ul.innerul
+                        .innerul__goback
+                        each a, i in Array(5)
+                            li.innerul__li
+                                a(href="innercategory.html")= 'ქვეკატეგორია' + (i + 1)
                 li
-                    a(href="my-safeness.html") ჩემი უსაფრთხოება
+                    a(href="my-safeness.html")
+                        span ჩემი უსაფრთხოება
+                    span.respoarrow
+                    ul.innerul
+                        .innerul__goback
+                        each a, i in Array(5)
+                            li.innerul__li
+                                a(href="innercategory.html")= 'ქვეკატეგორია' + (i + 1)
                 li
-                    a(href="my-story.html") ჩემი ამბავი
+                    a(href="my-story.html")
+                        span ჩემი ამბავი
+                    span.respoarrow
+                    ul.innerul
+                        .innerul__goback
+                        each a, i in Array(5)
+                            li.innerul__li
+                                a(href="innercategory.html")= 'ქვეკატეგორია' + (i + 1)
                 li
                     a(href="femea.html") FEMEA
         form#searchform.header__searchform(action="")

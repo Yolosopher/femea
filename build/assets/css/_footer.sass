@@ -27,6 +27,7 @@ footer
             font-family: firagobold
             @include font(18px, 22px)
             text-transform: uppercase
+            font-feature-settings: "case" on
             margin-bottom: 30px
             pointer-events: none
             @media screen and ( max-width: 1024px )
@@ -60,6 +61,30 @@ footer
                 opacity: .8
                 @include plus1025()
                     text-align: unset
+                &.fb
+                    text-transform: capitalize
+                    display: flex
+                    align-items: center
+                    &::before
+                        transform: translateY(1px)
+                        margin-right: 10px
+                        content: url(../img/socials/fb-f.svg)
+                &.ig
+                    text-transform: capitalize
+                    display: flex
+                    align-items: center
+                    &::before
+                        margin-right: 10px
+                        transform: translateY(1px)
+                        content: url(../img/socials/ig-f.svg)
+                &.yt
+                    text-transform: capitalize
+                    display: flex
+                    align-items: center
+                    &::before
+                        margin-right: 10px
+                        transform: translateY(1px)
+                        content: url(../img/socials/yt-f.svg)
         &.toggled
             @media screen and ( max-width: 1024px )
                 h4

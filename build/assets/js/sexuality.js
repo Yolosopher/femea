@@ -6,9 +6,11 @@ descriptionTogglerBtn.addEventListener('click', () => {
     descriptionParagraph.classList.toggle('toggled')
 })
 window.addEventListener('load', () => {
-    let height5 = 30 * 5 + 100
+    let height5 = 30 * 5 + 40
+    let height6 = 28 * 6
     let heightfull = descriptionParagraph.scrollHeight
     descriptionParagraph.style.setProperty('--height5', height5 + 'px')
+    descriptionParagraph.style.setProperty('--height6', height6 + 'px')
     descriptionParagraph.style.setProperty('--heightfull', heightfull + 'px')
 })
 
