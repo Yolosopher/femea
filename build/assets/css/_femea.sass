@@ -1,0 +1,155 @@
+.femeamain
+    margin-top: 40px
+    margin-bottom: 71px
+    @include plus1025()
+        margin-bottom: 96px
+
+    ol
+        padding-left: 1em
+
+    .aboutslide__textbox
+        @include plus1025()
+            height: 0
+            flex-grow: 1
+            overflow: auto
+        p, li
+            @include font(16px, 30px)
+            color: #000
+        *
+            font-family: firagomedium
+            font-weight: normal
+        > *:not(:last-child)
+            margin-bottom: 1em
+        h1, h2, h3, h4, h5, h6
+            margin-bottom: 0 !important
+            @include font(22px, 30px)
+            
+    &__container
+        display: grid
+        background-color: #fff
+        width: 100%
+        grid-gap: 38px
+        grid-template-columns: 100%
+        @include plus1025()
+            grid-template-columns: auto 360px
+            grid-gap: 59px
+            height: 692px
+            border-radius: 20px
+            overflow: hidden
+        @include plus1900()
+            grid-template-columns: auto 360px
+
+    &__content
+        &__title
+            font-family: firagosemibold
+            @include font(24px, 37px)
+            color: #000
+            @include upperCase()
+            margin-bottom: 30px
+    &__contentslider
+        &__swiper
+            width: 100%
+        &__wrapper
+
+        &__slide
+            @include plus1025()
+                padding: 40px
+                height: 100%
+                display: flex
+                // justify-content: 
+                flex-direction: column
+
+    &__navslider
+        background-color: #8075FA
+        height: 92px
+        order: -1
+        align-items: center
+        display: flex
+        width: 100vw
+        position: relative
+        left: -20px
+        @include plus1025()
+            border-radius: 0 20px 20px 0
+            width: 100%
+            height: 100%
+            position: static
+            order: 0
+            display: flex
+            align-items: center
+            justify-content: center
+        &__swiper
+            width: 100%
+            @include plus1025()
+                padding-top: 20px
+        &__wrapper
+            align-self: flex-end
+            // height: 100%
+            height: #{92px - 12px}
+            margin-top: 12px
+            width: 100%
+            align-items: flex-end
+            @include plus1025()
+                align-self: unset
+                height: unset
+                margin-top: 0
+        &__slide
+            justify-content: center
+            flex-grow: 0
+            display: flex
+            align-items: center
+            cursor: pointer
+            // height: 85px
+            // width: max-content
+            border-radius: 16px 16px 0 0
+            font-family: firago
+            @include font(18px, 30px)
+            color: #fff
+            @include upperCase()
+            transition: background-color .1s linear, color .1s linear
+            @include plus1025()
+                padding: 34px 0
+                height: max-content !important
+                width: 382px
+                right: 15px
+
+            &::after, &::before
+                position: absolute
+                display: inline-block
+                // background-color: #fff
+                z-index: 2
+                width: max-content
+                height: max-content
+                opacity: 0
+                transition: opacity .1s linear
+                @include plus1025()
+                    transform: rotate(90deg)
+            &::after
+                top: 66%
+                right: 91%
+                content: url(../img/femeanav/mob-left.svg)
+                @include plus1025()
+                    top: unset
+                    bottom: 72%
+                    right: 85%
+                    // left: unset
+                    // right: 85%
+                    // top: 77%
+            &::before
+                top: 66%
+                left: 92%
+                content: url(../img/femeanav/mob-right.svg)
+                @include plus1025()
+                    left: unset
+                    right: 85%
+                    top: 77%
+            &.thumbactive
+                background-color: #fff
+                color: #000
+                &::after, &::before
+                    opacity: 1
+                @include plus1025()
+                    text-align: center
+                    border-radius: 0 16px 16px 0
+                    // margin-right: 15px
+
+
