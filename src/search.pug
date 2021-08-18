@@ -77,7 +77,8 @@ html(lang="en")
         .searchword.container
             .searchword__top
                 h2 საძიებო სიტყვა
-                img(src="#")
+                a
+                    img(src="#")
             .searchword__bottom
                 p სულ მოიძებნა
                 span 15
@@ -94,6 +95,9 @@ html(lang="en")
                                 a(href="statia.html")= article.title
                             p= article.description
                         a.homemain__newestarticles__slide__category(href="#", style=`--categorycolor: ${article.color};`)= article.category
+                        .searchmain__list__item__tags
+                            a თარიღი, 
+                            a თეგები
 
             .pagepagination.cat-two.innercontainer
                 a.pagepagination__left(href="#") 
