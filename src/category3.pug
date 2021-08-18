@@ -1,0 +1,251 @@
+-
+    const pageinfo = {
+        title: 'ჩემი სექსუალობა',
+        third: 'სექსი',
+        fourth: 'პირველი სექსი'
+    }
+-
+    const articleNames = [
+        'სიახლის სათაური შეიძლება იყოს ოხაზიანი',
+        'სიახლის სათაური შეიძლება იყოს ოხაზიანი ან საერთოდაც შეიძლება სამხაზიანიც',
+        'სტატიის სათაური იქნება ასეთი შეიძლება ორხაზ…',
+        'სიახლის სათაური შეიძლება იყოს ოხაზიანი ან საერთოდაც შეიძლება სამხაზიანიც',
+        'სტატიის სათაური იქნება ასეთი შეიძლება ორხაზ…',
+        'სიახლის სათაური შეიძლება იყოს ოხაზიანი ან საერთოდაც შეიძლება სამხაზიანიც'
+    ]
+-
+    const articles = [
+        {
+            title: 'სიახლის სათაური შეიძლება იყოს ოხაზიანი',
+            description: 'ეს არის სტატიის მოკლე შინაარსის ადგილი რომელიც ორ ხაზზე გრძელდება და ასე…',
+            image: 'assets/img/slideslatestnews/1.jpg',
+            category: 'ჩემი სექსუალობა',
+            color: '#D9C65C',
+            image1: 'assets/img/storyarticles/1.jpg',
+        },
+        {
+            title: 'სიახლის სათაური შეიძლება იყოს ოხაზიანი ან საერთოდაც შეიძლება სამხაზიანიც',
+            description: 'ეს არის სტატიის მოკლე შინაარსის ადგილი რომელიც ორ ხაზზე გრძელდება და ასე…',
+            image: 'assets/img/slideslatestnews/2.jpg',
+            category: 'ჩემი სხეული',
+            color: '#5CD9BC',
+            image1: 'assets/img/storyarticles/2.jpg',
+        },
+        {
+            title: 'სტატიის სათაური იქნება ასეთი შეიძლება ორხაზ…',
+            description: 'ეს არის სტატიის მოკლე შინაარსის ადგილი რომელიც ორ ხაზზე გრძელდება და ასე…',
+            image: 'assets/img/slideslatestnews/3.jpg',
+            category: 'ჩემი ფსიქიკა',
+            color: '#C0D1F1',
+            image1: 'assets/img/storyarticles/3.jpg',
+        },
+        {
+            title: 'სიახლის სათაური შეიძლება იყოს ოხაზიანი ან საერთოდაც შეიძლება სამხაზიანიც',
+            description: 'ეს არის სტატიის მოკლე შინაარსის ადგილი რომელიც ორ ხაზზე გრძელდება და ასე…',
+            image: 'assets/img/slideslatestnews/4.jpg',
+            category: 'ჩემი სექსუალობა',
+            color: 'blue',
+            image1: 'assets/img/storyarticles/1.jpg',
+        },
+        {
+            title: 'სტატიის სათაური იქნება ასეთი შეიძლება ორხაზ…',
+            description: 'ეს არის სტატიის მოკლე შინაარსის ადგილი რომელიც ორ ხაზზე გრძელდება და ასე…',
+            image: 'assets/img/slideslatestnews/5.jpg',
+            category: 'ჩემი სხეული',
+            color: 'red',
+            image1: 'assets/img/storyarticles/2.jpg',
+        },
+        {
+            title: 'სიახლის სათაური შეიძლება იყოს ოხაზიანი ან საერთოდაც შეიძლება სამხაზიანიც',
+            description: 'ეს არის სტატიის მოკლე შინაარსის ადგილი რომელიც ორ ხაზზე გრძელდება და ასე…',
+            image: 'assets/img/slideslatestnews/6.jpg',
+            category: 'ჩემი სექსუალობა',
+            color: 'red',
+            image1: 'assets/img/storyarticles/3.jpg',
+        }
+    ]
+
+doctype html
+html(lang="en")
+    head
+        link(rel="stylesheet", href="assets/css/swiper-bundle.min.css")
+        include ../layouts/_head
+    body(class=pageinfo.title=== 'Home' ? 'homebody' : '')
+        include ../layouts/_header
+        include ../layouts/_pagenav
+
+        main.sexualitymain.container
+            .sexualitymain__content
+                //- cloned
+                section.homemain__populararticles.pink
+                    .innercontainer
+                        .homemain__populararticles__header.sectionheader
+                            h2 ხშირად დასმული კითხვები
+                        .homemain__populararticles__articles.insexcats
+                            ul.homemain__populararticles__ul.questionoften
+                                each article, index in articles
+                                    li.questionsformodal(data-answer=`answer number ${index + 1}`, data-links='["https://www.google.com/", "https://www.facebook.com/"]')= (index + 1) + ' ხშირად დასმული კითხვა ნომერი' 
+                            .homemain__populararticles__articles__toggler
+                                span.on მეტის ნახვა
+                                span.off აკეცვა
+                        //- .homemain__populararticles__header.sectionheader
+                        //-     h2 კატეგორიები
+                        //- .homemain__populararticles__articles.insexcats
+                        //-     ul.homemain__populararticles__ul.questionoften.categoriess
+                        //-         li 
+                        //-             a(href="category2.html")  სექსი
+                        //-         li 
+                        //-             a(href="category2.html")  სგგი
+                        //-         li 
+                        //-             a(href="category2.html")  კონტრაცეპცია
+                        //-         li 
+                        //-             a(href="category2.html")  მენსტრუაცია
+                        //-         li 
+                        //-             a(href="category2.html")  ორსულობა
+                        //-         li 
+                        //-             a(href="category2.html")  გენდერი და იდენტობა
+                        .homemain__populararticles__header.sectionheader.greenish
+                            h2 პოპულარული სტატიები
+                            include ../components/fire
+                        .homemain__populararticles__articles.mgbt.greenish
+                            ul.homemain__populararticles__ul
+                                each name, index in articleNames
+                                    li
+                                        h3
+                                            a(href="#")= name
+                            
+                            .homemain__populararticles__articles__toggler
+                                span.on მეტის ნახვა
+                                span.off აკეცვა
+                //- cloned
+                section.homemain__newestarticles.category-two
+                    .homemain__newestarticles__slider.innercontainer.real
+                        .homemain__newestarticles__swiper.real
+                            .homemain__newestarticles__wrapper
+                                each article, index in articles
+                                    article.homemain__newestarticles__slide.max12
+                                        a.homemain__newestarticles__slide__imgbox(href='statia.html')
+                                            img(src=article.image, alt=article.title)
+                                        .homemain__newestarticles__slide__textbox
+                                            h3
+                                                a(href="statia.html")= article.title
+                                            p= article.description
+                                        a.homemain__newestarticles__slide__category(href="#", style=`--categorycolor: ${article.color};`)= article.category
+                                each article, index in articles
+                                    article.homemain__newestarticles__slide.max12
+                                        a.homemain__newestarticles__slide__imgbox(href='statia.html')
+                                            img(src=article.image, alt=article.title)
+                                        .homemain__newestarticles__slide__textbox
+                                            h3
+                                                a(href="statia.html")= article.title
+                                            p= article.description
+                                        a.homemain__newestarticles__slide__category(href="#", style=`--categorycolor: ${article.color};`)= article.category
+                                each article, index in articles
+                                    article.homemain__newestarticles__slide.max12
+                                        a.homemain__newestarticles__slide__imgbox(href='statia.html')
+                                            img(src=article.image, alt=article.title)
+                                        .homemain__newestarticles__slide__textbox
+                                            h3
+                                                a(href="statia.html")= article.title
+                                            p= article.description
+                                        a.homemain__newestarticles__slide__category(href="#", style=`--categorycolor: ${article.color};`)= article.category
+                    .pagepagination.cat-two.innercontainer
+                        a.pagepagination__left(href="#") 
+                            include ../components/pagleft
+                        ul.pagepagination__ul
+                            each a, i in Array(5)
+                                li(class=(i === 0 && 'active'))
+                                    a(href="#")= i + 1 
+                        a.pagepagination__right(href="#") 
+                            include ../components/pagright
+                
+                
+                //- .sexualitymain__twosliders
+                //-     //- cloned
+                //-     section.homemain__newestarticles
+                //-         .innercontainer
+                //-             .homemain__newestarticles__header.sectionheader
+                //-                 h2 შშმ ქალები
+                //-                 .homemain__newestarticles__navigation
+                //-                     .homemain__newestarticles__navigation__left.women
+                //-                         include ../components/sliderarrowright
+                //-                     .homemain__newestarticles__navigation__right.women
+                //-                         include ../components/sliderarrowright
+                //-         .homemain__newestarticles__slider.innercontainer
+                //-             .homemain__newestarticles__swiper.swiper-container.women
+                //-                 .homemain__newestarticles__wrapper.swiper-wrapper
+                //-                     each article, index in articles
+                //-                         article.homemain__newestarticles__slide.swiper-slide
+                //-                             a.homemain__newestarticles__slide__imgbox(href='statia.html')
+                //-                                 img(src=article.image, alt=article.title)
+                //-                             .homemain__newestarticles__slide__textbox
+                //-                                 h3
+                //-                                     a(href="statia.html")= article.title
+                //-                                 p= article.description
+                //-                             a.homemain__newestarticles__slide__category(href="#", style=`--categorycolor: ${article.color};`)= article.category
+                //-                     each article, index in articles
+                //-                         article.homemain__newestarticles__slide.swiper-slide
+                //-                             a.homemain__newestarticles__slide__imgbox(href='statia.html')
+                //-                                 img(src=article.image, alt=article.title)
+                //-                             .homemain__newestarticles__slide__textbox
+                //-                                 h3
+                //-                                     a(href="statia.html")= article.title
+                //-                                 p= article.description
+                //-                             a.homemain__newestarticles__slide__category(href="#", style=`--categorycolor: ${article.color};`)= article.category
+                //-                     each article, index in articles
+                //-                         article.homemain__newestarticles__slide.swiper-slide
+                //-                             a.homemain__newestarticles__slide__imgbox(href='statia.html')
+                //-                                 img(src=article.image, alt=article.title)
+                //-                             .homemain__newestarticles__slide__textbox
+                //-                                 h3
+                //-                                     a(href="statia.html")= article.title
+                //-                                 p= article.description
+                //-                             a.homemain__newestarticles__slide__category(href="#", style=`--categorycolor: ${article.color};`)= article.category
+                //-     //- cloned
+                //-     section.homemain__newestarticles
+                //-         .innercontainer
+                //-             .homemain__newestarticles__header.sectionheader
+                //-                 h2 lgbtq+
+                //-                 .homemain__newestarticles__navigation
+                //-                     .homemain__newestarticles__navigation__left.lgbt
+                //-                         include ../components/sliderarrowright
+                //-                     .homemain__newestarticles__navigation__right.lgbt
+                //-                         include ../components/sliderarrowright
+                //-         .homemain__newestarticles__slider.innercontainer
+                //-             .homemain__newestarticles__swiper.swiper-container.lgbt
+                //-                 .homemain__newestarticles__wrapper.swiper-wrapper
+                //-                     each article, index in articles
+                //-                         article.homemain__newestarticles__slide.swiper-slide
+                //-                             a.homemain__newestarticles__slide__imgbox(href='statia.html')
+                //-                                 img(src=article.image, alt=article.title)
+                //-                             .homemain__newestarticles__slide__textbox
+                //-                                 h3
+                //-                                     a(href="statia.html")= article.title
+                //-                                 p= article.description
+                //-                             a.homemain__newestarticles__slide__category(href="#", style=`--categorycolor: ${article.color};`)= article.category
+                //-                     each article, index in articles
+                //-                         article.homemain__newestarticles__slide.swiper-slide
+                //-                             a.homemain__newestarticles__slide__imgbox(href='statia.html')
+                //-                                 img(src=article.image, alt=article.title)
+                //-                             .homemain__newestarticles__slide__textbox
+                //-                                 h3
+                //-                                     a(href="statia.html")= article.title
+                //-                                 p= article.description
+                //-                             a.homemain__newestarticles__slide__category(href="#", style=`--categorycolor: ${article.color};`)= article.category
+                //-                     each article, index in articles
+                //-                         article.homemain__newestarticles__slide.swiper-slide
+                //-                             a.homemain__newestarticles__slide__imgbox(href='statia.html')
+                //-                                 img(src=article.image, alt=article.title)
+                //-                             .homemain__newestarticles__slide__textbox
+                //-                                 h3
+                //-                                     a(href="statia.html")= article.title
+                //-                                 p= article.description
+                //-                             a.homemain__newestarticles__slide__category(href="#", style=`--categorycolor: ${article.color};`)= article.category
+
+        include ../layouts/_questionmodal
+        include ../layouts/_footer
+
+        include ../layouts/_scripts
+        //- only homepage
+        script(src="assets/js/swiper-bundle.min.js") 
+        script(src="assets/js/sexuality.js")

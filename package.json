@@ -11,5 +11,11 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "gulp-exec": "^5.0.0"
+  },
+  "dependencies": {
+    "gulp": "^4.0.2"
+  }
 }

@@ -3,10 +3,10 @@ let herocontent_articles_swiper = new Swiper('.homemain__herocontent__articles',
     direction: 'horizontal',
     spaceBetween: 10,
     centeredSlides: false,
-    speed: 3000,
+    speed: 1800,
     autoplay: {
-        delay: 4000,
-        disableOnInteraction: true,
+        delay: 1000,
+        disableOnInteraction: false,
     },
     loop: true,
     breakpoints: {

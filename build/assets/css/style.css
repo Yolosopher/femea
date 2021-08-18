@@ -75,7 +75,7 @@ input:-webkit-autofill:active {
     padding: 0 66px;
   }
 }
-@media screen and (min-width: 1430px) {
+@media screen and (min-width: 1530px) {
   .container {
     padding: 0 140px;
   }
@@ -199,7 +199,7 @@ body:not(.homebody) {
     grid-template-columns: auto 1fr minmax(auto, 360px);
   }
 }
-@media screen and (min-width: 1430px) {
+@media screen and (min-width: 1530px) {
   .header__container {
     grid-template-columns: auto 1fr minmax(auto, 360px);
   }
@@ -216,11 +216,6 @@ body:not(.homebody) {
 @media screen and (min-width: 1025px) {
   .header__logo {
     margin-right: 30px;
-  }
-}
-@media screen and (min-width: 1900px) {
-  .header__logo {
-    margin-right: 170px;
   }
 }
 .header__nav {
@@ -302,11 +297,6 @@ body:not(.homebody) {
     grid-gap: 20px;
   }
 }
-@media screen and (min-width: 1900px) {
-  .header__nav__ul {
-    grid-gap: 40px;
-  }
-}
 .header__nav__ul > li {
   max-width: max-content;
   font-family: firago;
@@ -320,8 +310,8 @@ body:not(.homebody) {
 @media screen and (min-width: 1025px) {
   .header__nav__ul > li {
     color: #000;
-    font-size: 16px;
-    line-height: 19px;
+    font-size: 14px;
+    line-height: 17px;
   }
 }
 .header__nav__ul > li.toggled .innerul {
@@ -465,12 +455,13 @@ body:not(.homebody) {
   display: grid;
   grid-auto-rows: auto;
   z-index: 6;
-  transition: opacity 0.4s ease-out;
+  transition: 0.4s ease-out;
   background-color: #EBEDFF;
   justify-content: center;
 }
 @media screen and (min-width: 1025px) {
   .innerul {
+    transition: opacity 0.4s ease-out;
     overflow: visible;
     opacity: 0;
     border-radius: 10px;
@@ -1394,6 +1385,20 @@ footer {
     line-height: 22px;
   }
 }
+.pagenav__content .tagpage {
+  font-family: firagobold;
+  font-size: 22px;
+  line-height: 37px;
+  text-transform: uppercase;
+  font-feature-settings: "case" on;
+  color: #000;
+}
+@media screen and (min-width: 1025px) {
+  .pagenav__content .tagpage {
+    font-size: 30px;
+    line-height: 37px;
+  }
+}
 
 .questionmodal {
   display: flex;
@@ -1704,7 +1709,7 @@ footer {
 }
 @media screen and (max-width: 1024px) {
   .sexualitymain .homemain__newestarticles__slider.real {
-    margin-bottom: 25px;
+    margin-bottom: 8px;
   }
 }
 
@@ -2231,6 +2236,160 @@ footer {
 }
 .sharemodal__bg.toggled {
   display: inline-block;
+}
+
+.pagepagination {
+  width: 100%;
+  display: grid;
+  grid-gap: 6px;
+  align-items: center;
+  height: 46px;
+  grid-template-columns: auto 1fr auto;
+  margin-bottom: 46px;
+}
+@media screen and (min-width: 1025px) {
+  .pagepagination {
+    margin: 0 auto;
+    width: max-content;
+    height: 38px;
+    margin-bottom: 0;
+  }
+}
+.pagepagination__ul {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  justify-content: stretch;
+}
+.pagepagination__ul li {
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+@media screen and (min-width: 1025px) {
+  .pagepagination__ul li {
+    width: 38px;
+  }
+}
+.pagepagination__ul li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  border-radius: 9px;
+  background-color: #fff;
+}
+.pagepagination__ul li:not(:last-of-type) {
+  margin-right: 6px;
+}
+.pagepagination__ul li.active a {
+  background-color: #8075FA;
+  color: #fff;
+}
+.pagepagination__left, .pagepagination__right {
+  border-radius: 9px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 49px;
+  height: 100%;
+  cursor: pointer;
+  background-color: #fff;
+}
+@media screen and (min-width: 1025px) {
+  .pagepagination__left, .pagepagination__right {
+    width: 39px;
+  }
+}
+.pagepagination__left svg, .pagepagination__right svg {
+  height: 15.91px;
+  width: auto;
+  width: 9.82px;
+  display: inline-block;
+}
+@media screen and (min-width: 1025px) {
+  .pagepagination__left svg, .pagepagination__right svg {
+    width: 7.98px;
+    height: 12.93px;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .questionsformodal {
+    height: 100px !important;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .category-two {
+    height: max-content !important;
+  }
+}
+.category-two .homemain__newestarticles__slider.innercontainer.real {
+  height: unset;
+}
+@media screen and (min-width: 1025px) {
+  .category-two .homemain__newestarticles__slider.innercontainer.real {
+    margin-bottom: 50px;
+  }
+}
+.category-two .homemain__newestarticles__wrapper {
+  display: grid;
+  width: 100%;
+  grid-gap: 20px;
+}
+@media screen and (min-width: 1025px) {
+  .category-two .homemain__newestarticles__wrapper {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px 16px;
+  }
+}
+.category-two .homemain__newestarticles__slide {
+  width: 100%;
+}
+@media screen and (max-width: 1024px) {
+  .category-two .homemain__newestarticles__slide:nth-child(n+7) {
+    display: none;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .category-two .homemain__newestarticles__slide.max9:nth-child(n+10) {
+    display: none;
+  }
+  .category-two .homemain__newestarticles__slide.max12:nth-child(n+13) {
+    display: none;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .category-two .homemain__newestarticles__slider.innercontainer.real {
+    margin-bottom: 38px !important;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .pagepagination {
+    margin-bottom: 50px !important;
+  }
+}
+
+.homemain__populararticles__header.sectionheader.greenish {
+  background: none !important;
+  background-color: #ACCDBE !important;
+}
+
+.homemain__populararticles__articles.mgbt.greenish {
+  background-color: rgba(172, 205, 190, 0.2) !important;
+}
+
+@media screen and (min-width: 1025px) {
+  .sexualitymain__content.full {
+    grid-template-columns: unset;
+  }
+  .sexualitymain__content.full .homemain__newestarticles__wrapper {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

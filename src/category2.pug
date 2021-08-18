@@ -1,6 +1,7 @@
 -
     const pageinfo = {
-        title: 'ჩემი სექსუალობა'
+        title: 'ჩემი სექსუალობა',
+        third: 'სექსი'
     }
 -
     const articleNames = [
@@ -74,15 +75,6 @@ html(lang="en")
 
         main.sexualitymain.container
             .sexualitymain__content
-                .sexualitymain__description
-                    p
-                        | ტექსტის მაგალითი: სექსუალობა ბიოლოგიური, ფსიქოლოგიური, სულიერი და ემოციური განცდებისა და ქცევების ერთობლიობაა, რაც დაკავშირებულია სექსუალური ლტოლვის გამოვლენასა და დაკმაყოფილებასთან და წარმოადგენს ადამიანის ორგანიზმის თანდაყოლილ მოთხოვნილებას და ფუნქციას. ადამიანი იბადება გარკვეული (სექსუალური) პოტენციალით, რომელიც შემდეგ ვითარდება ინდივიდუალური ცხოვრებისეული გამოცდილების საფუძველზე. ის მოიცავს სქესს, გენდერულ იდენტობას და როლს, სექსუალურ ორიენტაციას, ეროტიულობას, სიამოვნებას, ინტიმურობასა და რეპროდუქციას. ტექსტის მაგალითი: სექსუალობა ბიოლოგიური, ფსიქოლოგიური, სულიერი და ემოციური განცდებისა და ქცევების ერთობლიობაა, რაც დაკავშირებულია სექსუალური ლტოლვის გამოვლენასა და დაკმაყოფილებასთან და წარმოადგენს ადამიანის ორგანიზმის თანდაყოლილ მოთხოვნილებას და ფუნქციას. ადამიანი იბადება გარკვეული (სექსუალური) პოტენციალით, რომელიც შემდეგ ვითარდება ინდივიდუალური ცხოვრებისეული გამოცდილების საფუძველზე. ის მოიცავს სქესს, გენდერულ იდენტობას და როლს, სექსუალურ ორიენტაციას, ეროტიულობას, სიამოვნებას, ინტიმურობასა და რეპროდუქციას.
-                    .sexualitymain__description__hr
-
-                    .sexualitymain__description__toggler
-                        span.on მეტის ნახვა
-                        span.off აკეცვა
-
                 //- cloned
                 section.homemain__populararticles.pink
                     .innercontainer
@@ -113,20 +105,12 @@ html(lang="en")
                                     a(href="category2.html")  გენდერი და იდენტობა
 
                 //- cloned
-                section.homemain__newestarticles.withpag
-                    .innercontainer
-                        .homemain__newestarticles__header.sectionheader
-                            h2 ჩემი სექსუალობა
-                            .homemain__newestarticles__navigation
-                                .homemain__newestarticles__navigation__left.real
-                                    include ../components/sliderarrowright
-                                .homemain__newestarticles__navigation__right.real
-                                    include ../components/sliderarrowright
+                section.homemain__newestarticles.category-two
                     .homemain__newestarticles__slider.innercontainer.real
-                        .homemain__newestarticles__swiper.swiper-container.real
-                            .homemain__newestarticles__wrapper.swiper-wrapper
+                        .homemain__newestarticles__swiper.real
+                            .homemain__newestarticles__wrapper
                                 each article, index in articles
-                                    article.homemain__newestarticles__slide.swiper-slide
+                                    article.homemain__newestarticles__slide.max9
                                         a.homemain__newestarticles__slide__imgbox(href='statia.html')
                                             img(src=article.image, alt=article.title)
                                         .homemain__newestarticles__slide__textbox
@@ -135,7 +119,7 @@ html(lang="en")
                                             p= article.description
                                         a.homemain__newestarticles__slide__category(href="#", style=`--categorycolor: ${article.color};`)= article.category
                                 each article, index in articles
-                                    article.homemain__newestarticles__slide.swiper-slide
+                                    article.homemain__newestarticles__slide.max9
                                         a.homemain__newestarticles__slide__imgbox(href='statia.html')
                                             img(src=article.image, alt=article.title)
                                         .homemain__newestarticles__slide__textbox
@@ -144,7 +128,7 @@ html(lang="en")
                                             p= article.description
                                         a.homemain__newestarticles__slide__category(href="#", style=`--categorycolor: ${article.color};`)= article.category
                                 each article, index in articles
-                                    article.homemain__newestarticles__slide.swiper-slide
+                                    article.homemain__newestarticles__slide.max9
                                         a.homemain__newestarticles__slide__imgbox(href='statia.html')
                                             img(src=article.image, alt=article.title)
                                         .homemain__newestarticles__slide__textbox
@@ -152,7 +136,7 @@ html(lang="en")
                                                 a(href="statia.html")= article.title
                                             p= article.description
                                         a.homemain__newestarticles__slide__category(href="#", style=`--categorycolor: ${article.color};`)= article.category
-                    .pagepagination.innercontainer
+                    .pagepagination.cat-two.innercontainer
                         a.pagepagination__left(href="#") 
                             include ../components/pagleft
                         ul.pagepagination__ul

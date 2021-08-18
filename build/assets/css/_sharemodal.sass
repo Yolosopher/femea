@@ -1,0 +1,131 @@
+.sharemodal
+    position: fixed
+    max-height: calc(100vh - 50px)
+    left: 50%
+    top: 200vh
+    transform: translate(-50%, -50%)
+    border-radius: 30px
+    z-index: 99
+    width: calc(100% - 20px)
+    height: auto
+    background-color: #fff
+    padding: 30px 40px
+    transition: top .4s ease-out
+    @include plus1025()
+        width: max-content
+        max-width: 548px
+    &.toggled
+        top: 50%
+    &__container
+        display: flex
+        width: 100%
+        flex-direction: column
+
+    &__header
+        display: flex
+        // align-items: flex-start
+        justify-content: space-between
+        &__left
+            p
+                font-family: firagobold
+                @include font(22px, 24px)
+                color: #000
+                margin-bottom: 3px
+                text-transform: capitalize
+            h6
+                font-family: firagobook
+                @include font(14px, 22px)
+                color: rgba(#000, .45)
+                margin-bottom: 18px
+                @include maxcolumn(1)
+                max-height: 22px
+    &__shares
+        margin-bottom: 18px
+        p
+            font-family: gothammedium
+            @include font(16px, 24px)
+            color: #000
+            font-weight: 500
+            margin-bottom: 16px
+            text-transform: capitalize
+        &__ul
+            display: grid
+            grid-gap: 10px
+            width: 100%
+            @include plus1025()
+                grid-template-columns: repeat(5, 80px)
+                grid-gap: 17px
+            li
+                display: inline-block
+                a
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    border-radius: 20px
+                    width: 100%
+                    height: 80px
+                    &::after
+                        display: inline-block
+                        height: 27px
+                    &.fb
+                        background-color: #4267B2
+                        &::after
+                            content: url(../img/shares/fb.svg)
+                        &:hover
+                            filter: drop-shadow(0px 10px 30px rgba(66, 103, 178, 0.26))
+                            box-shadow: 0px 10px 30px rgba(66, 103, 178, 0.26)
+                            
+
+                    &.msgr
+                        background-color: #00B2FF
+                        &::after
+                            content: url(../img/shares/msgr.svg)
+                        &:hover
+                            filter: drop-shadow(0px 10px 30px rgba(0, 178, 255, 0.26))
+                    &.ig
+                        background-color: #E1306C
+                        &::after
+                            content: url(../img/shares/ig.svg)
+                        &:hover
+                            filter: drop-shadow(0px 10px 30px rgba(225, 48, 108, 0.26))
+                    &.lk
+                        background-color: #2D72C5
+                        &::after
+                            content: url(../img/shares/lk.svg)
+                        &:hover
+                            filter: drop-shadow(0px 10px 30px rgba(40, 103, 178, 0.26))
+                    &.mail
+                        background-color: #C71610
+                        &::after
+                            content: url(../img/shares/mail.svg)
+                        &:hover
+                            filter: drop-shadow(0px 10px 30px rgba(199, 22, 16, 0.26))
+
+    &__X
+        width: 50px
+        height: 50px
+        cursor: pointer
+        &::after
+            content: url(../img/questionmodalx.svg)
+            width: 50px
+            height: 50px
+
+
+
+
+
+
+    &__bg
+        position: fixed
+        width: 100%
+        height: 100vh
+        top: 0
+        right: 0
+        background-color: rgba(#000, .5)
+        z-index: 98
+        display: none
+        &.toggled
+            display: inline-block
+
+
+

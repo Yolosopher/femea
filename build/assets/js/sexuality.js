@@ -1,40 +1,41 @@
 const descriptionTogglerBtn = document.querySelector('.sexualitymain__description__toggler')
 const descriptionParagraph = document.querySelector('.sexualitymain__description p')
-
-descriptionTogglerBtn.addEventListener('click', () => {
-    descriptionTogglerBtn.classList.toggle('toggled')
-    descriptionParagraph.classList.toggle('toggled')
-})
-window.addEventListener('load', () => {
-    let height5 = 30 * 5 + 40
-    let height6 = 28 * 6
-    let heightfull = descriptionParagraph.scrollHeight
-    descriptionParagraph.style.setProperty('--height5', height5 + 'px')
-    descriptionParagraph.style.setProperty('--height6', height6 + 'px')
-    descriptionParagraph.style.setProperty('--heightfull', heightfull + 'px')
-})
-
-let newsslider = new Swiper('.homemain__newestarticles__swiper.real', {
-    slidesPerView: 'auto',
-    spaceBetween: 10,
-    navigation: {
-        nextEl: '.homemain__newestarticles__navigation__right.real',
-        prevEl: '.homemain__newestarticles__navigation__left.real',
-        disabledClass: 'disabled'
-    },
-    breakpoints: {
-        700: {
-            slidesPerView: 2,
-            slidesPerColumn: 2,
-            spaceBetween: 20,
+if (!!descriptionTogglerBtn) {
+    descriptionTogglerBtn.addEventListener('click', () => {
+        descriptionTogglerBtn.classList.toggle('toggled')
+        descriptionParagraph.classList.toggle('toggled')
+    })
+    window.addEventListener('load', () => {
+        let height5 = 30 * 5 + 40
+        let height6 = 28 * 6
+        let heightfull = descriptionParagraph.scrollHeight
+        descriptionParagraph.style.setProperty('--height5', height5 + 'px')
+        descriptionParagraph.style.setProperty('--height6', height6 + 'px')
+        descriptionParagraph.style.setProperty('--heightfull', heightfull + 'px')
+    })
+    let newsslider = new Swiper('.homemain__newestarticles__swiper.real', {
+        slidesPerView: 'auto',
+        spaceBetween: 10,
+        navigation: {
+            nextEl: '.homemain__newestarticles__navigation__right.real',
+            prevEl: '.homemain__newestarticles__navigation__left.real',
+            disabledClass: 'disabled'
         },
-        1025: {
-            slidesPerView: 3,
-            spaceBetween: 20,
-            slidesPerColumn: 2,
+        breakpoints: {
+            700: {
+                slidesPerView: 2,
+                slidesPerColumn: 2,
+                spaceBetween: 20,
+            },
+            1025: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+                slidesPerColumn: 2,
+            }
         }
-    }
-})
+    })
+}
+
 let newssliderWomen = new Swiper('.homemain__newestarticles__swiper.women', {
     slidesPerView: 'auto',
     spaceBetween: 10,

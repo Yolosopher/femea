@@ -1,6 +1,14 @@
 .pagenav.container
     .pagenav__content
-        a(href="index.html") მთავარი
-        span  > 
-        a(href="my-sexuality.html") ჩემის სექსუალობა 
-
+        if(pageinfo.tag === true)
+            span.tagpage თეგი: თეგის სახელი
+        else
+            a(href="index.html") მთავარი
+            span  > 
+            a(href="my-sexuality.html") ჩემის სექსუალობა 
+            if (pageinfo.third)
+                span  > 
+                a(href="category2.html")= pageinfo.third 
+            if (pageinfo.fourth)
+                span  > 
+                a(href="category3.html")= pageinfo.fourth 

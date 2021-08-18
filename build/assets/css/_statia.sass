@@ -1,0 +1,264 @@
+.statiamain
+    padding-top: 30px
+    @include plus1025()
+        padding-top: 50px
+    .sexualitymain__content
+        display: flex
+        flex-direction: column
+        @include plus1025()
+            display: flex
+            flex-direction: row
+            .homemain__populararticles.pink
+                flex-shrink: 0
+    .homemain__newestarticles
+        width: 100%
+        overflow: hidden
+    &__whitebg
+        &__mobile
+            padding: 20px
+            border-radius: 30px 30px 0px 0px
+            background-color: #fff
+            margin-bottom: 40px
+            @include plus1025()
+                margin-bottom: 0
+                padding: 0
+                border-radius: 0
+                background-color: transparent
+        &__desktop
+            @include plus1025()
+                padding: 45px
+                background-color: #fff
+                border-radius: 20px
+                margin-bottom: 50px
+    &__content
+        width: 100%
+        display: flex
+        flex-direction: column
+        @include plus1025()
+            flex-grow: 1
+            width: 0
+    &__title
+        font-family: firagosemibold
+        @include upperCase()
+        color: #000
+        @include font(18px, 22px)
+        margin-bottom: 44px
+        @include plus1025()
+            margin-bottom: 12px
+            @include font(30px, 46px)
+            
+    &__info
+        font-family: firagobook
+        color: #000
+        opacity: .5
+        @include font(14px, 22px)
+        margin-bottom: 28px
+        @include plus1025()
+            margin-bottom: 30px
+    &__coverlink
+        width: 100%
+        height: 230px
+        position: relative
+        overflow: hidden
+        border-radius: 20px
+        margin-bottom: 40px
+        @include plus1025()
+            height: 557px
+            margin-bottom: 37px
+        img
+            width: 100%
+            height: 100%
+            object-fit: cover
+    &__article
+        &__content
+            // padding: 20px
+            margin-bottom: 30px
+            @include plus1025()
+                padding-bottom: 53px
+                border-bottom: 1px solid rgba(#707070, .09)
+                margin-bottom: 39px
+            p
+                user-select: text
+                @include font(16px, 30px)
+                font-family: firagobook
+                color: #000
+            > p
+                margin-bottom: 2em
+
+            .quote
+                user-select: text
+                border-radius: 20px
+                display: block
+                margin-bottom: 2em
+                font-family: gothambookitalic
+                @include font(16px, 30px)
+                font-weight: 500
+                padding: 40px 30px
+                background-color: #005955
+                color: #fff
+                @include plus1025()
+                    color: #000
+                    background-color: #C0D1F1
+                    display: grid
+                    grid-template-columns: auto 1fr
+                    grid-gap: 32px
+                &::before
+                    content: url(../img/quotemobile.svg)
+                    display: block
+                    margin-bottom: 20px
+                    width: 84.87px
+                    height: 60.62px
+                    @include plus1025()
+                        content: url(../img/quote.svg)
+                    // opacity: 
+            .withimage
+                @include plus1025()
+                    display: grid
+                    grid-template-columns: 1fr 1fr
+                    grid-gap: 21px
+                p
+                    margin-bottom: 50px
+                    @include plus1025()
+                        margin-bottom: 0
+                &__imgbox
+                    width: 100%
+                    height: 212px
+                    overflow: hidden
+                    border-radius: 10px
+                    @include plus1025()
+                        height: 443px
+                    img
+                        width: 100%
+                        height: 100%
+                        object-fit: cover
+    &__tagsAndShares
+        display: grid
+        grid-gap: 30px
+        width: 100%
+        margin-bottom: 10px
+        @include plus1025()
+            margin-bottom: 0
+            display: flex
+            align-items: center
+            justify-content: space-between
+            grid-gap: 0
+        &__label
+            font-family: firagobold
+            font-weight: 700
+            color: #000
+            @include font(20px, 24px)
+            text-transform: capitalize
+            margin-bottom: 18px
+            @include plus1025()
+                margin-bottom: 24px
+        .tags
+            &__ul
+                height: 60px
+                display: flex
+                align-items: center
+                li
+                    display: inline-block
+                    &:not(:last-of-type)
+                        margin-right: 20px
+                    a
+                        padding: 22px
+                        border-radius: 10px
+                        background-color: #F9F9F9
+                        display: inline-block
+    .homemain__newestarticles__slider
+        @include plus1025()
+            height: #{310px + 72px}
+    .homemain__populararticles__ul li
+        @include plus1025()
+            &:last-of-type
+                border: none !important
+    .mgbt
+        margin-bottom: 30px !important
+        @include plus1025()
+            margin-bottom: 35px !important
+.statiamain
+    aside
+        @include plus1025()
+            max-width: 360px
+        @include plus1900()
+            max-width: 398px
+    .shares
+        max-width: 348px
+        width: 100%
+        // height: 60px
+        display: flex
+        flex-direction: column
+        &__value
+            display: grid
+            grid-template-columns: 1fr auto
+            grid-gap: 10px
+            max-width: 382px
+            width: 100%
+            align-items: center
+            &.coverlink
+                position: absolute
+                right: 15px
+                top: 18px
+                display: none
+                @include plus1025()
+                    display: grid
+            &.modal
+                max-width: unset
+                display: flex
+                grid-gap: 0
+                width: 100%
+                .shares__container
+                    // padding
+                    width: 100%
+        &__container
+            cursor: pointer
+            padding: 0 20px
+            display: flex
+            align-items: center
+            height: 60px
+            border-radius: 9px
+            background-color: #F9F9F9
+            input
+                width: 0
+                flex-grow: 1
+                user-select: text
+                pointer-events: none
+                @include maxcolumn(1)
+                transition: color .3s ease-out
+            svg
+                margin-left: 5px
+                path
+                    transition: stroke .3s ease-out
+            &:hover
+                input
+                    color: #12A79D
+                svg path
+                    stroke: #12A79D
+            &.coppied
+                input
+                    color: #12A79D
+                svg path
+                    stroke: #12A79D
+ 
+
+        &__btn
+            display: flex
+            border-radius: 9px
+            background-color: #C0D1F1
+            width: 60px
+            height: 60px
+            cursor: pointer
+            display: flex
+            align-items: center
+            justify-content: center
+            &::after
+                content: url(../img/share.svg)
+            &.hov
+                @include plus1025()
+                    background-color: #FBD14C
+                    transition: box-shadow .1s ease-out
+                    box-shadow: 0px 10px 30px rgba(239, 199, 90, 0)
+                    &:hover
+                        box-shadow: 0px 10px 30px rgba(239, 199, 90, 0.7)
+
+

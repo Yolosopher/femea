@@ -24,7 +24,7 @@ body
         @include plus1025()
             display: grid
             grid-template-columns: auto 1fr minmax(auto, 360px)
-        @include sizePlus(1430px)
+        @include sizePlus(1530px)
         
             grid-template-columns: auto 1fr minmax(auto, 360px)
         
@@ -36,7 +36,7 @@ body
         @include plus1025()
             margin-right: 30px
         @include plus1900()
-            margin-right: 170px
+            // margin-right: 170px
     &__nav
         position: fixed
         top: -101vh
@@ -95,7 +95,7 @@ body
                 grid-template-columns: repeat(6, auto)
                 grid-gap: 20px
             @include plus1900()
-                grid-gap: 40px
+                // grid-gap: 40px
                 // grid-gap: 30px
             > li
                 max-width: max-content
@@ -107,7 +107,7 @@ body
                 position: relative
                 @include plus1025()
                     color: #000
-                    @include font(16px, 19px)
+                    @include font(14px, 17px)
                 &.toggled
                     .innerul
                         left: 0
@@ -235,10 +235,11 @@ body
     display: grid
     grid-auto-rows: auto
     z-index: 6
-    transition: opacity .4s ease-out
+    transition: .4s ease-out
     background-color: #EBEDFF
     justify-content: center
     @include plus1025()
+        transition: opacity .4s ease-out
         overflow: visible
         opacity: 0
         border-radius: 10px
