@@ -1,0 +1,119 @@
+-
+    const pageinfo = {
+        title: 'ჩემი სექსუალობა',
+        tag: true,
+        search: true
+    }
+-
+    const articleNames = [
+        'სიახლის სათაური შეიძლება იყოს ოხაზიანი',
+        'სიახლის სათაური შეიძლება იყოს ოხაზიანი ან საერთოდაც შეიძლება სამხაზიანიც',
+        'სტატიის სათაური იქნება ასეთი შეიძლება ორხაზ…',
+        'სიახლის სათაური შეიძლება იყოს ოხაზიანი ან საერთოდაც შეიძლება სამხაზიანიც',
+        'სტატიის სათაური იქნება ასეთი შეიძლება ორხაზ…',
+        'სიახლის სათაური შეიძლება იყოს ოხაზიანი ან საერთოდაც შეიძლება სამხაზიანიც'
+    ]
+-
+    const articles = [
+        {
+            title: 'სიახლის სათაური შეიძლება იყოს ოხაზიანი',
+            description: 'ეს არის სტატიის მოკლე შინაარსის ადგილი რომელიც ორ ხაზზე გრძელდება და ასე…',
+            image: 'assets/img/slideslatestnews/1.jpg',
+            category: 'ჩემი სექსუალობა',
+            color: '#D9C65C',
+            image1: 'assets/img/storyarticles/1.jpg',
+        },
+        {
+            title: 'სიახლის სათაური შეიძლება იყოს ოხაზიანი ან საერთოდაც შეიძლება სამხაზიანიც',
+            description: 'ეს არის სტატიის მოკლე შინაარსის ადგილი რომელიც ორ ხაზზე გრძელდება და ასე…',
+            image: 'assets/img/slideslatestnews/2.jpg',
+            category: 'ჩემი სხეული',
+            color: '#5CD9BC',
+            image1: 'assets/img/storyarticles/2.jpg',
+        },
+        {
+            title: 'სტატიის სათაური იქნება ასეთი შეიძლება ორხაზ…',
+            description: 'ეს არის სტატიის მოკლე შინაარსის ადგილი რომელიც ორ ხაზზე გრძელდება და ასე…',
+            image: 'assets/img/slideslatestnews/3.jpg',
+            category: 'ჩემი ფსიქიკა',
+            color: '#C0D1F1',
+            image1: 'assets/img/storyarticles/3.jpg',
+        },
+        {
+            title: 'სიახლის სათაური შეიძლება იყოს ოხაზიანი ან საერთოდაც შეიძლება სამხაზიანიც',
+            description: 'ეს არის სტატიის მოკლე შინაარსის ადგილი რომელიც ორ ხაზზე გრძელდება და ასე…',
+            image: 'assets/img/slideslatestnews/4.jpg',
+            category: 'ჩემი სექსუალობა',
+            color: 'blue',
+            image1: 'assets/img/storyarticles/1.jpg',
+        },
+        {
+            title: 'სტატიის სათაური იქნება ასეთი შეიძლება ორხაზ…',
+            description: 'ეს არის სტატიის მოკლე შინაარსის ადგილი რომელიც ორ ხაზზე გრძელდება და ასე…',
+            image: 'assets/img/slideslatestnews/5.jpg',
+            category: 'ჩემი სხეული',
+            color: 'red',
+            image1: 'assets/img/storyarticles/2.jpg',
+        },
+        {
+            title: 'სიახლის სათაური შეიძლება იყოს ოხაზიანი ან საერთოდაც შეიძლება სამხაზიანიც',
+            description: 'ეს არის სტატიის მოკლე შინაარსის ადგილი რომელიც ორ ხაზზე გრძელდება და ასე…',
+            image: 'assets/img/slideslatestnews/6.jpg',
+            category: 'ჩემი სექსუალობა',
+            color: 'red',
+            image1: 'assets/img/storyarticles/3.jpg',
+        }
+    ]
+
+doctype html
+html(lang="en")
+    head
+        link(rel="stylesheet", href="assets/css/swiper-bundle.min.css")
+        include ../layouts/_head
+    body(class=pageinfo.title=== 'Home' ? 'homebody' : '')
+        include ../layouts/_header
+        //- include ../layouts/_pagenav
+
+        .searchword.container
+            .searchword__top
+                h2 საძიებო სიტყვა
+                a
+                    img(src="#")
+            .searchword__bottom
+                p სულ მოიძებნა
+                span 15
+
+        main.searchmain.container
+
+            ul.searchmain__list
+                each article, index in articles
+                    li.homemain__newestarticles__slide.searchmain__list__item
+                        a.homemain__newestarticles__slide__imgbox(href='statia.html')
+                            img(src=article.image, alt=article.title)
+                        .homemain__newestarticles__slide__textbox
+                            h3
+                                a(href="statia.html")= article.title
+                            p= article.description
+                        a.homemain__newestarticles__slide__category(href="#", style=`--categorycolor: ${article.color};`)= article.category
+                        .searchmain__list__item__tags
+                            a თარიღი, 
+                            a თეგები
+
+            .pagepagination.cat-two.innercontainer
+                a.pagepagination__left(href="#") 
+                    include ../components/pagleft
+                ul.pagepagination__ul
+                    each a, i in Array(5)
+                        li(class=(i === 0 && 'active'))
+                            a(href="#")= i + 1 
+                a.pagepagination__right(href="#") 
+                    include ../components/pagright
+        
+
+        include ../layouts/_questionmodal
+        include ../layouts/_footer
+
+        include ../layouts/_scripts
+        //- only homepage
+        script(src="assets/js/swiper-bundle.min.js") 
+        script(src="assets/js/sexuality.js")
