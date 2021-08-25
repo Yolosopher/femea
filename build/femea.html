@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ჩემი სექსუალობა</title>
-    <link rel="stylesheet" href="assets/css/style.css?v=0.2">
+    <link rel="stylesheet" href="assets/css/style.css?v=0.4">
   </head>
   <body>
     <header class="header">
@@ -120,7 +120,25 @@
               </div>
             </article>
             <article class="femeamain__contentslider__slide swiper-slide aboutslide">
-              <h2 class="femeamain__content__title">ჩვენ შესახებ</h2>
+              <h2 class="femeamain__content__title">კონტაქტი</h2>
+              <form class="contactform" id="contactform" action="/contact" method="post">
+                <div class="input-div">
+                  <input id="contactname" type="text" name="name" placeholder="სახელი">
+                </div>
+                <div class="input-div">
+                  <input id="contactemail" type="text" name="email" placeholder="ელ. ფოსტა">
+                </div>
+                <div class="input-div">
+                  <input id="contactsubject" type="text" name="subject" placeholder="თემა">
+                </div>
+                <div class="input-div textarea-div">
+                  <textarea id="contacttext" name="text" placeholder="ტექსტი*"></textarea>
+                </div>
+                <button class="pinkbtn" type="submit">გაგზავნა</button>
+              </form>
+            </article>
+            <article class="femeamain__contentslider__slide swiper-slide aboutslide">
+              <h2 class="femeamain__content__title">ჩვენი პარტნიორები</h2>
               <div class="aboutslide__textbox">
                 <p>Femea ქალებისთვის შექმნილი სივრცეა, სადაც განთავსდება სანდო და გადამოწმებული ინფორმაცია მენტალურ, ფიზიკურ და სექსუალურ-რეპროდუქციულ ჯანმრთელობაზე, სექსუალობაზე, ურთიერთობებსა და ძალადობისგან თავდაცვაზე — ყველა იმ საკითხზე, რომელიც ქალების ჯანმრთელობასა და კეთილდღეობას განაპირობებს. სანდო ინფორმაციასთან ერთად Femea ქალების ისტორიებსაც გაგიზიარებთ.</p>
                 <p>ორგანიზაციის საქმიანობის მთავარი მიმართულება ქალთა თემის გაძლიერება და ქალთა ჯანმრთელობასა და კეთილდღეობასთან დაკავშირებით ცნობიერების ამაღლებისთვის მრავალმხრივი აქტივობების განხორციელებაა.</p>
@@ -134,7 +152,7 @@
               </div>
             </article>
             <article class="femeamain__contentslider__slide swiper-slide aboutslide">
-              <h2 class="femeamain__content__title">ჩვენ შესახებ</h2>
+              <h2 class="femeamain__content__title">ვაკანსიები</h2>
               <div class="aboutslide__textbox">
                 <p>Femea ქალებისთვის შექმნილი სივრცეა, სადაც განთავსდება სანდო და გადამოწმებული ინფორმაცია მენტალურ, ფიზიკურ და სექსუალურ-რეპროდუქციულ ჯანმრთელობაზე, სექსუალობაზე, ურთიერთობებსა და ძალადობისგან თავდაცვაზე — ყველა იმ საკითხზე, რომელიც ქალების ჯანმრთელობასა და კეთილდღეობას განაპირობებს. სანდო ინფორმაციასთან ერთად Femea ქალების ისტორიებსაც გაგიზიარებთ.</p>
                 <p>ორგანიზაციის საქმიანობის მთავარი მიმართულება ქალთა თემის გაძლიერება და ქალთა ჯანმრთელობასა და კეთილდღეობასთან დაკავშირებით ცნობიერების ამაღლებისთვის მრავალმხრივი აქტივობების განხორციელებაა.</p>
@@ -148,21 +166,7 @@
               </div>
             </article>
             <article class="femeamain__contentslider__slide swiper-slide aboutslide">
-              <h2 class="femeamain__content__title">ჩვენ შესახებ</h2>
-              <div class="aboutslide__textbox">
-                <p>Femea ქალებისთვის შექმნილი სივრცეა, სადაც განთავსდება სანდო და გადამოწმებული ინფორმაცია მენტალურ, ფიზიკურ და სექსუალურ-რეპროდუქციულ ჯანმრთელობაზე, სექსუალობაზე, ურთიერთობებსა და ძალადობისგან თავდაცვაზე — ყველა იმ საკითხზე, რომელიც ქალების ჯანმრთელობასა და კეთილდღეობას განაპირობებს. სანდო ინფორმაციასთან ერთად Femea ქალების ისტორიებსაც გაგიზიარებთ.</p>
-                <p>ორგანიზაციის საქმიანობის მთავარი მიმართულება ქალთა თემის გაძლიერება და ქალთა ჯანმრთელობასა და კეთილდღეობასთან დაკავშირებით ცნობიერების ამაღლებისთვის მრავალმხრივი აქტივობების განხორციელებაა.</p>
-                <h1>ჩვენი მიზნებია:</h1>
-                <ul>
-                  <li>ქალების ჯანმრთელობასა და კეთილდღეობასთან დაკავშირებულ საკითხებზე ცნობიერების ამაღლება, როგორებიცაა მენტალური და ფიზიკური ჯანმრთელობა, სექსუალობა და სექსუალურ-რეპროდუქციული ჯანმრთელობა, სექსი, ურთიერთობები და ძალადობა;</li>
-                  <li>ქალთა თემის გაძლიერება ისეთი კონტენტის შექმნით, რომელიც შეესაბამება თანამედროვე ტენდენციებსა და ხედვებს;</li>
-                  <li>სექსუალური უმცირესობებისა და შშმ ქალების საჭიროებებსა და გამოწვევებზე ინფორმაციის გავრცელება.</li>
-                  <li>კვლევების, სემინარებისა და ტრენინგების ჩატარება, ასევე სამეცნიერო, საგანმანათლებლო და საინფორმაციო საქმიანობის განხორციელება;</li>
-                </ul>
-              </div>
-            </article>
-            <article class="femeamain__contentslider__slide swiper-slide aboutslide">
-              <h2 class="femeamain__content__title">ჩვენ შესახებ</h2>
+              <h2 class="femeamain__content__title">ჩვენი წესდება</h2>
               <div class="aboutslide__textbox">
                 <p>Femea ქალებისთვის შექმნილი სივრცეა, სადაც განთავსდება სანდო და გადამოწმებული ინფორმაცია მენტალურ, ფიზიკურ და სექსუალურ-რეპროდუქციულ ჯანმრთელობაზე, სექსუალობაზე, ურთიერთობებსა და ძალადობისგან თავდაცვაზე — ყველა იმ საკითხზე, რომელიც ქალების ჯანმრთელობასა და კეთილდღეობას განაპირობებს. სანდო ინფორმაციასთან ერთად Femea ქალების ისტორიებსაც გაგიზიარებთ.</p>
                 <p>ორგანიზაციის საქმიანობის მთავარი მიმართულება ქალთა თემის გაძლიერება და ქალთა ჯანმრთელობასა და კეთილდღეობასთან დაკავშირებით ცნობიერების ამაღლებისთვის მრავალმხრივი აქტივობების განხორციელებაა.</p>
@@ -229,7 +233,7 @@
         </div>
       </div>
     </footer>
-    <script src="assets/js/main.js?v=0.2"></script>
+    <script src="assets/js/main.js?v=0.4"></script>
     <script src="assets/js/swiper-bundle.min.js"> </script>
     <script src="assets/js/femea.js"> </script>
   </body>

@@ -149,4 +149,79 @@ html
 @import _femea
 
 
+.homemain__newestarticles__slide.max16
+    &:nth-of-type(n+17)
+        display: none
+    
+.contactform
+    display: grid
+    grid-gap: 20px
+    @include plus1025()
+        grid-gap: 27px 17px
+        grid-template-columns: repeat(3, 1fr)
+    .input-div
+        input
+            height: 70px
+        input, textarea
+            padding: 0 30px
+            width: 100%
+            display: flex
+            align-items: center
+            border-radius: 14px
+            border: 1px solid #E5E5E5
+            color: #000
+            font-family: firago
+            @include font(16px, 30px)
+
+            &::placeholder
+                color: rgba(#000, .5)
+                font-family: firagoitalic
+            &:focus
+                border-color: rgba(#000, .8)
+
+        textarea
+            padding: 30px
+            height: 478px
+            @include plus1025()
+                height: 351px
+        &.invalid.invalid-shown
+            input,textarea
+                border-color: $red
+
+    
+    .textarea-div
+        @include plus1025()
+            grid-column: 1 / 5
+    button
+        @include plus1025()
+            justify-self: flex-end
+            grid-column: 1 / 5
+        @include plus1025()
+            margin-top: 3px
+    
+
+.pinkbtn
+    cursor: pointer
+    height: 70px
+    width: 100%
+    border-radius: 15px
+    background: linear-gradient(rgba(217, 92, 150, 0.82) 0%, #ff7686 100%)
+    @include font(18px, 30px)
+    font-family: firagomedium
+    @include upperCase()
+    color: #fff
+    @include plus700()
+        padding: 0 69px
+        max-width: 222px
+
+
+
+
+
+.homemain__newestarticles__slider.innercontainer.real.tagreal
+    @include plus1025()
+        margin-bottom: 0 !important
+        .homemain__newestarticles__wrapper
+            padding-bottom: 50px !important
+
 

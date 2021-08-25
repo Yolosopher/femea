@@ -63,7 +63,7 @@ const inneruls = [...document.querySelectorAll('.innerul')]
 inneruls.forEach(each => {
     each.style.setProperty('--height', each.scrollHeight + 'px')
     let parentLi = each.parentElement
-
+    let x = false
     parentLi.querySelector('a').addEventListener('mouseenter', () => {
         if (window.innerWidth > 1024) {
             [...document.querySelectorAll('li.hovered')].forEach(ach => ach.classList.remove('hovered'))
@@ -73,7 +73,22 @@ inneruls.forEach(each => {
             // }, 1);
         }
     }, true)
+    each.addEventListener('mouseenter', () => {
+        if (window.innerWidth > 1024) {
+            x = true
+        }
+    })
+    document.querySelector('.header').addEventListener('mouseleave', (e) => {
+        setTimeout(() => {
+            if (!x) {
+                if (window.innerWidth > 1024) {
+                    parentLi.classList.remove('hovered')
+                }
+            }
+        }, 300);
+    })
     each.addEventListener('mouseleave', () => {
+        x = false
         if (window.innerWidth > 1024) {
             parentLi.classList.remove('hovered')
         }
@@ -137,4 +152,11 @@ if (!!questionmodal) {
         questionmodal__bg.classList.add('toggled')
     })
 
+})
+
+searchform.addEventListener('submit', (e) => {
+    if (document.getElementById('search').value === 'puchu puchu') {
+        e.preventDefault()
+        location.href = `${window.location.origin}/femea/category3.html`
+    }
 })
