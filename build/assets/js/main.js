@@ -28,16 +28,31 @@ const autoGrow = (ul) => {
     ul.style.setProperty('--height', ul.scrollHeight + 'px')
 }
 
+
+
 footerUls.forEach(ul => {
     autoGrow(ul)
 })
-
-
+const scrollToBottom = (el) => {
+    window.scrollTo(0, el.scrollHeight + el.offsetTop) 
+}
 
 h4s.forEach(h4 => {
+    let isHeightChecked = false
     h4.addEventListener('click', () => {
+        let scrollNeeded = !h4.parentElement.classList.contains('toggled')
+        if (!isHeightChecked) {
+            autoGrow(h4.nextElementSibling)
+            isHeightChecked = true
+        }
         h4.parentElement.classList.toggle('toggled')
-    }) 
+        if (scrollNeeded) {
+            setTimeout(() => {
+                scrollToBottom(h4.nextElementSibling.querySelector('li:last-child'))
+                // console.log()
+            }, 401);
+        }
+    })
 })
 
 const searchform = document.getElementById('searchform')

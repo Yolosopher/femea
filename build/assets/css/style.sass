@@ -10,6 +10,7 @@ body
 html
     --swiper-theme-color: $dark !important
     font-family: firagomedium
+    scroll-behavior: smooth
 
 @import _header
 
@@ -106,7 +107,8 @@ html
     .homemain__newestarticles__slider.innercontainer.real
         height: unset
         @include plus1025()
-            margin-bottom: 50px
+            margin-bottom: 0
+            padding-bottom: 50px
     .homemain__newestarticles__wrapper
         display: grid
         width: 100%
@@ -225,3 +227,18 @@ html
             padding-bottom: 50px !important
 
 
+
+
+.homemain__newestarticles__swiper.swiper-container.real.respo6
+    .homemain__newestarticles__wrapper.swiper-wrapper
+        @media screen and ( max-width: 1024px )
+            display: grid !important
+            flex-direction: column !important
+            flex-wrap: nowrap !important
+            width: 100% !important
+            grid-gap: 20px !important
+            .homemain__newestarticles__slide
+                width: 100% !important
+.respo6parent
+    @media screen and ( max-width: 1024px )
+        height: unset !important

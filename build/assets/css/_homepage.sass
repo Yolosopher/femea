@@ -117,7 +117,7 @@
         // .swiper-slide
 
     &__contactinfo
-        order: 1
+        order: 2
         @include plus1025()
             padding-top: 118px
             order: 0
@@ -546,3 +546,9 @@
                     height: 18px
 
 
+.homebody
+    @media screen and ( max-width: 1024px )
+        .homemain__populararticles, .homemain__populararticles.pink
+            order: 1 !important
+        .homemain__newestarticles__header.sectionheader.mystory
+            margin-top: 20px !important
